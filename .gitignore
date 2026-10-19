@@ -1,0 +1,21 @@
+# 上游仓库与本地环境，不进版本库
+lectures/
+assignments/
+.tools/
+.secrets/
+
+# 环境
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+pytest-cache-files-*/
+
+# 数据与产物
+**/data/
+*.zip
+*.pdf
+!plan/*.pdf
+
+# 系统
+.DS_Store
+Thumbs.db
