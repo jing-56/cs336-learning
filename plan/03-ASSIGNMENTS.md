@@ -13,6 +13,19 @@
 **交付**：`code.zip` + `writeup.pdf`（含实验图）。
 **算力**：CPU 能完成全部代码与测试；正式实验需 B200（配额约 17 B200·h）。
 
+### 实际进度（2026-10-27）
+
+| 部分 | 状态与证据 |
+| --- | --- |
+| BPE / Tokenizer / 数据采样 | 核心功能已有分项通过；任意切块边界、Linux 内存限制和完整语料实验未完成 |
+| 模型组件到完整 LM | 对应前向测试通过，支持 RoPE 与较短输入 |
+| 交叉熵、AdamW、调度、裁剪、checkpoint | 对应单元测试通过；checkpoint 曾因加载适配器未接入失败，修复后通过 |
+| 单批次训练 | CPU 100 步，loss 9.2533 → 0.0124，固定批次准确率 100% |
+| 正式训练与生成 | 尚缺独立验证、随机批次主循环、调度接入、CLI、周期存档/续训与采样生成 |
+| 分析与正式实验 | 资源核算、全语料、超参扫描、消融、writeup 尚待完成 |
+
+详细变更与测试范围见 [10 月 26 日](../notes/2026-10-26-A1-TRANSFORMER-AND-LOSS.md)、[10 月 27 日](../notes/2026-10-27-A1-TRAINING-AND-CHECKPOINT.md)。[源码归档](../implementations/a1-basics/README.md)保存累计实现；上游测试、数据和 checkpoint 未上传。
+
 ### 要写的东西（按依赖顺序）
 
 | # | 模块 | 对应测试 | 分值 | 备注 |
@@ -24,15 +37,15 @@
 | 5 | 分词实验 | — | 4 | 两种语料的 token 数对比 |
 | 6 | Linear / Embedding / RMSNorm / SwiGLU / SiLU | `test_model.py` | 1+1+1+1 | 都要自己算，不许调 `nn.Linear` |
 | 7 | RoPE | `test_model.py` | 2 | 交错 vs 半半分，见 pitfalls |
-| 8 | softmax / SDPA / MHA | `test_model.py`、`test_nn_utils.py` | 1 + 5 + 5 | SDPA 要支持 `is_causal` 和任意前导维度 |
-| 9 | TransformerBlock / TransformerLM | `test_model.py` | 3 + 3 | pre-norm + RoPE + 权重绑定按 handout |
+| 8 | softmax / SDPA / MHA | `test_model.py`、`test_nn_utils.py` | 1 + 5 + 5 | SDPA 支持布尔 mask 和任意前导维度，因果 mask 在多头模块生成 |
+| 9 | TransformerBlock / TransformerLM | `test_model.py` | 3 + 3 | pre-norm + RoPE；当前 Embedding 与输出层权重独立 |
 | 10 | 资源核算题（FLOPs/显存） | — | 5 | 纯推导，但对后面理解 systems 极有帮助 |
-| 11 | cross-entropy | `test_model.py` | 1 | 用 log-sum-exp 稳定写法 |
+| 11 | cross-entropy | `test_nn_utils.py` | 1 | 用 log-sum-exp 稳定写法 |
 | 12 | AdamW | `test_optimizer.py` | 2 | 自己实现，别 wrap `torch.optim.AdamW` |
 | 13 | AdamW 显存核算 | — | 2 | 同上，推导题 |
-| 14 | 梯度裁剪 / cosine 调度 / checkpoint | `test_optimizer.py`、`test_serialization.py` | 1+1+1 | 简单但容易错边界 |
+| 14 | 梯度裁剪 / cosine 调度 / checkpoint | `test_nn_utils.py`、`test_optimizer.py`、`test_serialization.py` | 1+1+1 | 简单但容易错边界 |
 | 15 | 数据采样 `get_batch` | `test_data.py` | 2 | 随机 offset，注意别越界 |
-| 16 | 训练脚本（拼起来） | — | 4 | 支持 CLI、断点续训、wandb |
+| 16 | 训练脚本（拼起来） | — | 4 | 支持配置、断点续训、独立验证与周期存档；日志可先输出到终端 |
 | 17 | 解码（top-p / temperature） | — | 3 | 采样要可复现 |
 | 18 | 实验日志 | — | 3 | 每次 run 记超参 + 曲线 |
 | 19 | 学习率扫描 | — | 3 | **2 B200·h**，找出会发散的上界 |
@@ -49,7 +62,7 @@ cd E:\CS336\assignments\a1-basics
 uv run pytest tests/test_train_bpe.py -q -p no:cacheprovider
 uv run pytest tests/test_model.py tests/test_nn_utils.py -q -p no:cacheprovider
 uv run pytest tests/test_optimizer.py tests/test_serialization.py tests/test_data.py -q -p no:cacheprovider
-# Windows 上 test_tokenizer.py 需要 WSL2（它 import resource）
+# Windows 上当前已为 resource 做条件导入，普通测试可运行；Linux 专属内存限额测试仍需 Linux 验证
 ```
 
 ### writeup 该有的东西

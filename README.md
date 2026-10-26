@@ -35,6 +35,7 @@ E:\CS336\
 ├─ notes\
 │  ├─ INDEX.md            19 讲笔记索引（带进度勾选）
 │  └─ _TEMPLATE.md        单讲笔记模板
+├─ implementations\a1-basics\  本人实现源码快照、接入函数与文件哈希
 ├─ lectures\cs336-lectures\   官方课件仓库（19 讲 pdf/py）
 ├─ assignments\
 │  ├─ a1-basics\          tokenizer + 模型 + 优化器 + 训练
@@ -47,12 +48,16 @@ E:\CS336\
 
 ---
 
-## 今天先做三件事（约 1 小时）
+## 当前进度（2026-10-27）
 
-1. **读** `plan/00-ROADMAP.md` 的第一周，别通读全文。
-2. **跑** 环境：按 `plan/01-SETUP.md` 在 `assignments/a1-basics` 里 `uv sync`，然后 `uv run pytest`。
-   正确的初始状态是：**环境装好、测试全部报 `NotImplementedError` 失败**。全绿说明你抄到答案了，全红但跑不起来说明环境没通。
-3. **记** 打开 `notes/INDEX.md`，把第 1 讲标成 `[~]`，看完第一讲（tokenization）再来填 `notes/L01.md`。
+- 完整 Transformer 前向与训练支持组件已通过对应测试；BPE 和 Tokenizer 的此前验证范围见每日记录。
+- 首次 CPU 单批次训练：100 步，loss **9.2533 → 0.0124**，固定 32 个预测位置准确率 **100%**；没有独立验证集结果。
+- 今天逐文件改动、排错过程与实验配置：[10 月 27 日记录](notes/2026-10-27-A1-TRAINING-AND-CHECKPOINT.md)。补齐的前一天模型记录：[10 月 26 日](notes/2026-10-26-A1-TRANSFORMER-AND-LOSS.md)。
+- [本人实现源码](implementations/a1-basics/README.md)包含此前依赖与今天的新模块，不含数据、模型存档和上游测试。
+- 下次继续：训练/验证划分、随机批次、训练中学习率调度、正式训练脚本与生成。
+- 这不是 A1 全部完成：完整语料实验、资源核算、调参与消融、writeup 和部分分词边界/内存约束仍待处理。
+
+完整导航见 [笔记索引](notes/INDEX.md)与[作业进度](plan/03-ASSIGNMENTS.md)。
 
 ---
 
@@ -71,18 +76,13 @@ E:\CS336\
 
 ---
 
-## AI 使用约定（重要，别跳过）
+## 当前学习方式与记录约定
 
-课程仓库自带 `AGENTS.md`，明确要求 AI 扮演**助教**而不是代写：
+已有基于 nanoGPT 的 Transformer 理论基础，按“具体例子 → 小段代码 → 逐步解释 → 运行测试 → 实验结果”的节奏学习。编程不是主业，采用代码演示配合讲解，理解每个模块如何连接和为什么这样计算。
 
-- ✅ 可以：解释概念、解读报错、帮你设计断言和玩具例子、review 你写的代码、指出该看哪一讲
-- ❌ 不做：替你写 tokenizer / Transformer / Triton kernel / 分布式 / 对齐算法，不填 `TODO`，不直接把作业要求翻译成可运行代码
-
-这不是客套。这门课的价值全在"你自己撞墙再爬出来"的过程里，一旦被代写，作业分有了、面试题答不出。所以在本目录里，我按 `AGENTS.md` 的角色行事：**给方向、给检查手段、给 review，不给实现**。
-
-另外两条实战规则：
-- 做作业时关掉 AI 自动补全（Cursor Tab / Copilot），官方明确说它显著降低理解深度。
-- 卡住超过 90 分钟再问人/AI，但问的时候带上：你试了什么、期望什么、实际什么、最小复现。
+- 每次记录实际修改的文件、测试回执、实验配置和数值。
+- 将单项测试、单批次拟合与独立验证集结果分开，不用测试通过代替完整实验和理解。
+- 本仓库的 `implementations/` 保存个人实现快照，活动开发仍在官方作业目录；上游课件、测试、数据和环境单独保留。
 
 ---
 
@@ -96,10 +96,10 @@ E:\CS336\
 
 ## 换一台机器怎么复现
 
-这个仓库只放**文档与脚本**，不含课件和作业代码（那是上游仓库，117 MB + 带 `.venv`，不该进版本库）。到新机器上：
+这个仓库保存**文档、工具脚本与本人实现的源码快照**。课件、整个上游作业仓库、虚拟环境、数据和模型产物不上传。到新机器上先准备官方环境，再按[源码恢复说明](implementations/a1-basics/README.md)接回自己的实现：
 
 ```powershell
-git clone https://github.com/<你的用户名>/<仓库名>.git CS336
+git clone https://github.com/jing-56/cs336-learning.git CS336
 cd CS336
 .\tools\setup.ps1        # 浅克隆 lectures\ 与 assignments\ 共 6 个官方仓库
 . .\tools\env.ps1        # 设好 uv / Python / 镜像（若报策略错误，见 plan\01-SETUP.md 第 1 节）
@@ -108,7 +108,7 @@ uv sync
 uv run pytest -p no:cacheprovider
 ```
 
-初始状态应当是 **13 failed, 全是 `NotImplementedError`**。
+尚未接回个人实现时，未实现接口会报 `NotImplementedError`；测试数量随上游版本而变化。恢复源码后按本仓库记录的测试范围验证。
 
 > 上游更新很快（作业 handout 会带版本号，如 A2 的 `26.1.4`）。进作业目录 `git pull` 就能同步，冲突通常只在 `tests/adapters.py`。
 

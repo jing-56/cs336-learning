@@ -190,3 +190,18 @@
 
 **原因**：没记超参。
 **正解方向**：每次 run 前在 `notes/` 写一行假设（"lr 3e-4 应该比 1e-3 稳"），run 完贴图和结论。A1 的 `experiment_log` 那题就是逼你养成这个习惯。
+
+
+### 27. Checkpoint 加载报 NotImplementedError（2026-10-27 实际排错）
+
+**症状**：保存后，`test_checkpointing` 调用 `run_load_checkpoint`，报错停在 `tests/adapters.py` 的 `raise NotImplementedError`。
+
+**原因**：本地加载适配器还没接上，尚未执行 `checkpoint.py` 中的读取逻辑。
+
+**处理**：保留官方函数参数与说明，将函数体接到自己的 `load_checkpoint(src, model, optimizer)` 并返回已完成步数。保存文件后重新运行该测试，得到 `1 passed in 2.15s`；不需要修改测试断言。
+
+### 28. 单批次 100% 准确率应怎样解读（2026-10-27）
+
+固定 B=2、T=16 的批次训练 100 步，loss 从 9.2533 降到 0.0124，32 个位置最高分预测均正确。这验证训练链路能拟合该批次；新文本表现要另外划分验证集评估。准确率 100% 不意味着正确 token 的概率为 1。
+
+日志中的 step=100 loss=0.0126 是该步更新前的值，最后重新前向得到 0.0124 是更新后的值，二者不矛盾。
