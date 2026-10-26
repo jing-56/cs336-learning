@@ -1,0 +1,232 @@
+{
+  "snapshot_date": "2026-10-27",
+  "description": "本人实现的累计源码快照；不包含上游 starter、测试、数据或模型产物。",
+  "copied_module_count": 30,
+  "modules": [
+    {
+      "source": "assignments/a1-basics/cs336_basics/attention.py",
+      "archive": "implementations/a1-basics/cs336_basics/attention.py",
+      "sha256": "7062da7389d3ec0ddc91beaebd2d9f95641bd8856a65c1847474ed2b309279fd",
+      "source_modified_at": "2026-10-25T22:25:24+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/attention_demo.py",
+      "archive": "implementations/a1-basics/cs336_basics/attention_demo.py",
+      "sha256": "05cec04af3f6c2c408c385ae3b0ef5e8ce1ef7cc66fd49f259a7e095a369852c",
+      "source_modified_at": "2026-10-25T22:23:28+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/bpe.py",
+      "archive": "implementations/a1-basics/cs336_basics/bpe.py",
+      "sha256": "2a3056d5e3a88c863e2a33c921fd930f950d9d82a2e7cc0eb33aec4064c2366f",
+      "source_modified_at": "2026-10-25T20:03:56+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/checkpoint.py",
+      "archive": "implementations/a1-basics/cs336_basics/checkpoint.py",
+      "sha256": "8f55c7bf1efd184949e0c096de18bda57612873f909cc9b71a52bb79a4e92050",
+      "source_modified_at": "2026-10-27T00:14:54+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/data.py",
+      "archive": "implementations/a1-basics/cs336_basics/data.py",
+      "sha256": "fbb83f7b071906cb985622b6c3caa81dcedc08abf5b364eb82444b1102fb425c",
+      "source_modified_at": "2026-10-25T21:39:27+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/embedding.py",
+      "archive": "implementations/a1-basics/cs336_basics/embedding.py",
+      "sha256": "ebec70b356e3d0151391548ab5afa8fa6774902ae9f256f891251aa6dcb7a7bb",
+      "source_modified_at": "2026-10-25T21:49:00+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/experiment_scale.py",
+      "archive": "implementations/a1-basics/cs336_basics/experiment_scale.py",
+      "sha256": "c741c29ec90ca90a81b83d579aca33c855ca0ef02a438a9af837fba5e08fb827",
+      "source_modified_at": "2026-10-25T21:11:28+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/experiment_tokenizer.py",
+      "archive": "implementations/a1-basics/cs336_basics/experiment_tokenizer.py",
+      "sha256": "0323a52e4566fdfcb691280736053c496d105918afdeb785d94c6758d406dc76",
+      "source_modified_at": "2026-10-25T20:39:13+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/gradient_demo.py",
+      "archive": "implementations/a1-basics/cs336_basics/gradient_demo.py",
+      "sha256": "3765937890514ec65f409142a9dd6843cd6bb3d3f562cb3ca74a5b0af74066ed",
+      "source_modified_at": "2026-10-26T23:56:04+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/linear.py",
+      "archive": "implementations/a1-basics/cs336_basics/linear.py",
+      "sha256": "c8aa614211c6c67b1d5ac32d49e619fc737e1732d36d5bfa608af2946719afba",
+      "source_modified_at": "2026-10-25T21:55:52+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/linear_demo.py",
+      "archive": "implementations/a1-basics/cs336_basics/linear_demo.py",
+      "sha256": "622a81f5e785f53bc0e10663dfb09a5afb27660d6ee00ba8ee90f0fd0acbb948",
+      "source_modified_at": "2026-10-25T21:52:18+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/lr_schedule.py",
+      "archive": "implementations/a1-basics/cs336_basics/lr_schedule.py",
+      "sha256": "01f5db514de1b3f9132e809a500fb6d4399292fb52a2431ef0da1fddcaf1a0d8",
+      "source_modified_at": "2026-10-27T00:07:10+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/multihead_attention.py",
+      "archive": "implementations/a1-basics/cs336_basics/multihead_attention.py",
+      "sha256": "3fdb2af707beb0bdb75b8b8a570c08602a5baac9ab54f78c4b58bdf6e24b9eaa",
+      "source_modified_at": "2026-10-26T23:40:05+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/multihead_demo.py",
+      "archive": "implementations/a1-basics/cs336_basics/multihead_demo.py",
+      "sha256": "f0bcd4b139f67c5bd62e4b8028add49f6a38abbb8ba371bb957a5811a6b01521",
+      "source_modified_at": "2026-10-26T23:00:10+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/nn_utils.py",
+      "archive": "implementations/a1-basics/cs336_basics/nn_utils.py",
+      "sha256": "529dddb152df7056d3f924b771d5544054059195885e81fa1814ffa41bf86023",
+      "source_modified_at": "2026-10-27T00:09:52+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/optimizer.py",
+      "archive": "implementations/a1-basics/cs336_basics/optimizer.py",
+      "sha256": "dcbda8d5287620dbb602a43b5181291a291eeded2728eb840ca10eede9aa2794",
+      "source_modified_at": "2026-10-27T00:04:23+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/prepare_tokens.py",
+      "archive": "implementations/a1-basics/cs336_basics/prepare_tokens.py",
+      "sha256": "174822ddc9747bd173fe02e19be60c8ef527cb834f8a46e07851a336c7a450b7",
+      "source_modified_at": "2026-10-25T21:22:07+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/rmsnorm.py",
+      "archive": "implementations/a1-basics/cs336_basics/rmsnorm.py",
+      "sha256": "087935b93300eb3f9815624cafb0f12c8f0840114ddac0f99acc882617bcdd0c",
+      "source_modified_at": "2026-10-25T22:01:40+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/rmsnorm_demo.py",
+      "archive": "implementations/a1-basics/cs336_basics/rmsnorm_demo.py",
+      "sha256": "1f88120880c0c26b67b58bcb73faf747abb6f964945cd12b8ec7d5786f4f8ab2",
+      "source_modified_at": "2026-10-25T21:59:39+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/rope.py",
+      "archive": "implementations/a1-basics/cs336_basics/rope.py",
+      "sha256": "e948b30f9e2306b2b26cd19a75ef2976803144cf32bf277fe095dc6b6d8caae8",
+      "source_modified_at": "2026-10-26T23:37:07+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/rope_demo.py",
+      "archive": "implementations/a1-basics/cs336_basics/rope_demo.py",
+      "sha256": "463945ad0c97591e04d3fcbe6121d9481a6b9757de52b6b3a20c1fb9128d1e90",
+      "source_modified_at": "2026-10-26T23:30:32+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/silu_demo.py",
+      "archive": "implementations/a1-basics/cs336_basics/silu_demo.py",
+      "sha256": "0feb44c98d35a3f62b969ac036850595245091c4d30e4d628011bba1c4741b6f",
+      "source_modified_at": "2026-10-25T22:06:28+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/softmax_demo.py",
+      "archive": "implementations/a1-basics/cs336_basics/softmax_demo.py",
+      "sha256": "9078b93a033c6627e2e75991e3556b4595897824d51a2cb1147f389f07d7fc34",
+      "source_modified_at": "2026-10-25T22:14:53+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/swiglu.py",
+      "archive": "implementations/a1-basics/cs336_basics/swiglu.py",
+      "sha256": "cf23d3447a7d7cadfbb280a71d190490f6a4cf438d84101223eca8d1b08dea31",
+      "source_modified_at": "2026-10-25T22:10:56+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/swiglu_demo.py",
+      "archive": "implementations/a1-basics/cs336_basics/swiglu_demo.py",
+      "sha256": "d1995a7996f23d451dc057456769debd226378ddfbf6a3565bf97bb9e3125f3b",
+      "source_modified_at": "2026-10-25T22:09:15+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/tokenizer_demo.py",
+      "archive": "implementations/a1-basics/cs336_basics/tokenizer_demo.py",
+      "sha256": "dd5ce4ce59261653215ec7e1fe4f0b1a0e09c75a989318513948ec784a904d0a",
+      "source_modified_at": "2026-10-25T20:06:25+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/train_demo.py",
+      "archive": "implementations/a1-basics/cs336_basics/train_demo.py",
+      "sha256": "ea7fb63ee421742a21ea05dc33e9c1e29f281bc90c940b2df1d7d35c95241571",
+      "source_modified_at": "2026-10-27T00:22:55+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/transformer_block.py",
+      "archive": "implementations/a1-basics/cs336_basics/transformer_block.py",
+      "sha256": "06e440f0d06888cff13c33086c11a6244432529f21b44775a5fad4ead00e5b6b",
+      "source_modified_at": "2026-10-26T23:44:12+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/transformer_lm.py",
+      "archive": "implementations/a1-basics/cs336_basics/transformer_lm.py",
+      "sha256": "f34c813e775e8907ca735e28f346b4fdebf9e3a257285eb5b3690e1a95891e27",
+      "source_modified_at": "2026-10-26T23:50:42+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/view_training_sample.py",
+      "archive": "implementations/a1-basics/cs336_basics/view_training_sample.py",
+      "sha256": "e9ebff6234c457f3fb1233447c296775c5c5531b31cc2a5cc2a83872410d85c8",
+      "source_modified_at": "2026-10-25T21:44:20+08:00"
+    }
+  ],
+  "generated_files": [
+    "cs336_basics/__init__.py",
+    "adapter_functions.py",
+    "README.md",
+    "SOURCE_MANIFEST.json",
+    ".gitignore",
+    ".gitattributes"
+  ],
+  "adapter_functions": [
+    "run_linear",
+    "run_embedding",
+    "run_swiglu",
+    "run_scaled_dot_product_attention",
+    "run_multihead_self_attention",
+    "run_multihead_self_attention_with_rope",
+    "run_rope",
+    "run_transformer_block",
+    "run_transformer_lm",
+    "run_rmsnorm",
+    "run_silu",
+    "run_get_batch",
+    "run_softmax",
+    "run_cross_entropy",
+    "run_gradient_clipping",
+    "get_adamw_cls",
+    "run_get_lr_cosine_schedule",
+    "run_save_checkpoint",
+    "run_load_checkpoint",
+    "get_tokenizer",
+    "run_train_bpe"
+  ],
+  "adapter_source_sha256": "a0a44b17f10e213e7a6a08ebc7b8d452fa233dd7f78400a1a5e71a4cfde0d6ac",
+  "adapter_extraction": "保留已实现函数的函数体，省略文档字符串和类型注解；排除 NotImplementedError 占位。",
+  "verification": {
+    "tests": 20,
+    "failures": 0,
+    "date": "2026-10-27",
+    "scope": [
+      "test_model.py",
+      "test_nn_utils.py",
+      "test_optimizer.py",
+      "test_data.py",
+      "test_serialization.py"
+    ]
+  }
+}
