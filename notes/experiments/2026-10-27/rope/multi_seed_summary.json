@@ -1,0 +1,58 @@
+{
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "settings": {
+    "validation_seed": 12345,
+    "num_steps": 1000,
+    "warmup_steps": 50,
+    "batch_size": 4,
+    "validation_batches": 10,
+    "max_lr": 0.003,
+    "min_lr": 0.0003,
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "model_config": {
+      "vocab_size": 10000,
+      "context_length": 64,
+      "d_model": 64,
+      "num_layers": 2,
+      "num_heads": 4,
+      "d_ff": 128,
+      "rope_theta": 10000.0,
+      "device": "cpu"
+    },
+    "train_tokens": 1143921,
+    "validation_tokens": 127340
+  },
+  "results": [
+    {
+      "seed": 42,
+      "with_rope": 3.654118800163269,
+      "without_rope": 3.8404861450195313,
+      "gap": 0.18636734485626238,
+      "source_summary": "seed42/summary.json"
+    },
+    {
+      "seed": 43,
+      "with_rope": 3.697649359703064,
+      "without_rope": 3.835349273681641,
+      "gap": 0.13769991397857684,
+      "source_summary": "seed43/summary.json"
+    },
+    {
+      "seed": 44,
+      "with_rope": 3.6465675830841064,
+      "without_rope": 3.8412778854370115,
+      "gap": 0.1947103023529051,
+      "source_summary": "seed44/summary.json"
+    }
+  ],
+  "mean_with_rope": 3.6661119143168133,
+  "mean_without_rope": 3.8390377680460612,
+  "mean_paired_gap": 0.1729258537292481,
+  "sample_std_paired_gap": 0.030790442647616132,
+  "positive_gap_count": 3
+}

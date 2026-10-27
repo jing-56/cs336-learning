@@ -1,0 +1,48 @@
+{
+  "validation_seed": 12345,
+  "num_steps": 1000,
+  "warmup_steps": 50,
+  "batch_size": 4,
+  "validation_batches": 10,
+  "max_lr": 0.003,
+  "min_lr": 0.0003,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "model_config": {
+    "vocab_size": 10000,
+    "context_length": 64,
+    "d_model": 64,
+    "num_layers": 2,
+    "num_heads": 4,
+    "d_ff": 128,
+    "rope_theta": 10000.0,
+    "device": "cpu"
+  },
+  "train_tokens": 1143921,
+  "validation_tokens": 127340,
+  "seed": 44,
+  "same_initial_parameters": true,
+  "same_training_batches": true,
+  "results": [
+    {
+      "use_rope": true,
+      "initial_parameter_hash": "3958d8870e4fcad7600f65b82440f4c45be3dafdf6a1582e0d7baf6794dad371",
+      "training_batches_hash": "fa35c5175371c06a9a294549cc16cb17d8fa91df25db5f8d268d95368d0a082c",
+      "initial_val_loss": 9.214152526855468,
+      "final_val_loss": 3.6465675830841064,
+      "training_and_validation_seconds": 61.23107350000646,
+      "checkpoint_filename": "with_rope_checkpoint.pt",
+      "checkpoint_uploaded": false
+    },
+    {
+      "use_rope": false,
+      "initial_parameter_hash": "3958d8870e4fcad7600f65b82440f4c45be3dafdf6a1582e0d7baf6794dad371",
+      "training_batches_hash": "fa35c5175371c06a9a294549cc16cb17d8fa91df25db5f8d268d95368d0a082c",
+      "initial_val_loss": 9.214192295074463,
+      "final_val_loss": 3.8412778854370115,
+      "training_and_validation_seconds": 55.53940060001332,
+      "checkpoint_filename": "without_rope_checkpoint.pt",
+      "checkpoint_uploaded": false
+    }
+  ]
+}

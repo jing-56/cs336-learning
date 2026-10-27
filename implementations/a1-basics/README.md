@@ -1,6 +1,6 @@
 # A1 本人实现源码归档
 
-这是截至 **2026-10-27** 的学习实现快照。活动开发目录仍为 `E:/CS336/assignments/a1-basics`；本目录让个人源码可以随学习仓库一起保存，不把整个上游作业仓库嵌进 Git。
+这是记录 **2026-10-27** 学习内容、于 **2026-10-28** 整理同步的实现快照。活动开发目录仍为 `E:/CS336/assignments/a1-basics`；本目录让个人源码可以随学习仓库一起保存，不把整个上游作业仓库嵌进 Git。
 
 ## 包含什么
 
@@ -24,6 +24,11 @@
 | `nn_utils.py` | 稳定 softmax、交叉熵、全局梯度裁剪 |
 | `optimizer.py`、`lr_schedule.py`、`checkpoint.py` | AdamW、学习率调度、训练状态存取 |
 | `train_demo.py` | 固定 32 个预测位置、CPU 100 步的拟合实验 |
+| `train_loop.py`、`train_5m.py` | 随机批次、固定验证、调度与分段存档恢复；小样本及 5 MB 两种入口 |
+| `prepare_5m_tokens.py` | 按故事边界划分约 90/10 文本，编码训练/验证数组 |
+| `generate_demo.py`、`generate_5m.py` | 加载存档，温度/top-p 采样、EOS 停止和上下文截取 |
+| `train_rope_ablation.py`、`run_rope_multiseed.py` | 有/无 RoPE 严格配对与三个种子汇总 |
+| `train_lr_sweep.py` | 相同初始参数和批次的学习率尺度扫描，复用已核对的基线 |
 | `*_demo.py`、`experiment_*.py`、`view_training_sample.py` | 分步理解与样本实验 |
 
 部分早期文件名保留了 `demo`，其中也包含正在使用的类；本次同步没有为改名而重构源码。
@@ -63,6 +68,25 @@ cd E:\CS336\assignments\a1-basics
 
 具体测试与训练数值见 [10 月 26 日记录](../../notes/2026-10-26-A1-TRANSFORMER-AND-LOSS.md)、[10 月 27 日记录](../../notes/2026-10-27-A1-TRAINING-AND-CHECKPOINT.md)。
 
-当前训练演示使用固定批次和固定学习率；验证集、训练时调度、CLI、周期存档/断点继续、文本生成尚未连成正式脚本。Tokenizer 的任意切块边界、Linux 内存限额与完整语料实验也尚未完成。
+当前已跑通样本规模训练/验证/生成与恢复流程；checkpoint 不保存 RNG/采样进度。生成脚本未显式固定采样 RNG；还没有统一 CLI。Tokenizer 任意切块边界、Linux 内存限额与完整语料实验仍未完成。5 MB 小模型与正式实验要求不同。
 
-2026-10-27 归档复查：直接导入本目录源码和接入函数，现有模型/训练支持测试 **20 passed（11.14s）**；30 个复制模块哈希一致，32 个 Python 文件语法检查通过。
+2026-10-27 累计归档现有 38 个活动模块、最小包标识和提取的接入函数。同步复查逐文件哈希、Python 语法及 20 项模型/训练支持测试；详细范围与记录见 SOURCE_MANIFEST.json。20 项不是 A1 全套测试。
+
+### 继续复现今天的样本实验
+
+在官方环境中恢复源码，准备好原来的 10k 词表后依次运行：
+
+```powershell
+./.venv/Scripts/python.exe -X utf8 -m cs336_basics.prepare_5m_tokens
+./.venv/Scripts/python.exe -X utf8 -m cs336_basics.train_5m
+./.venv/Scripts/python.exe -X utf8 -m cs336_basics.generate_5m
+./.venv/Scripts/python.exe -X utf8 -m cs336_basics.train_rope_ablation
+./.venv/Scripts/python.exe -X utf8 -m cs336_basics.run_rope_multiseed
+./.venv/Scripts/python.exe -X utf8 -m cs336_basics.train_lr_sweep
+```
+
+`train_5m.py` 当前每次最多训练 900 步，历史实验先设 100、再改 900。新机器从头运行会先完成 900 步，再次运行补齐 100 步；有旧存档时自动恢复，不会自动重新从头训练。不要把旧存档用于不同结构。
+
+严格对照脚本各从头连续训练 1000 步并新建结果文件夹；多种子脚本需要先有配置一致的种子 42 结果，学习率扫描也需要同初始化及批次指纹的 0.003 基线。无 RoPE 存档加载后生成时同样需要关闭 RoPE，配置记录中的 use_rope 不能忽略。
+
+已提交的[实验 CSV/配置](../../notes/experiments/2026-10-27/README.md)可直接查看，无需下载模型。生成样例、数值解释及尚未完成项见[当天晚间记录](../../notes/2026-10-27-A1-TRAINING-GENERATION-AND-EXPERIMENTS.md)。

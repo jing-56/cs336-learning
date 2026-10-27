@@ -6,3 +6,5 @@ __pycache__/
 *.prof
 *.txt
 data/
+rope_ablation_runs/
+lr_sweep_runs/

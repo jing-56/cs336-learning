@@ -21,10 +21,12 @@
 | 模型组件到完整 LM | 对应前向测试通过，支持 RoPE 与较短输入 |
 | 交叉熵、AdamW、调度、裁剪、checkpoint | 对应单元测试通过；checkpoint 曾因加载适配器未接入失败，修复后通过 |
 | 单批次训练 | CPU 100 步，loss 9.2533 → 0.0124，固定批次准确率 100% |
-| 正式训练与生成 | 尚缺独立验证、随机批次主循环、调度接入、CLI、周期存档/续训与采样生成 |
-| 分析与正式实验 | 资源核算、全语料、超参扫描、消融、writeup 尚待完成 |
+| 训练与生成闭环 | 已有随机批次、固定验证、调度、分段存档恢复和温度/top-p 生成；5 MB 样本训练 1000 步，用户运行验证 loss 3.6202；CLI、完整 RNG 恢复与正式训练目标待补 |
+| 分析与正式实验 | 样本规模 RoPE 三种子对照和七候选学习率扫描完成；0.003 当前最好。batch、其余三种结构对照、数值发散边界、资源核算、全语料和 writeup 待完成 |
 
-详细变更与测试范围见 [10 月 26 日](../notes/2026-10-26-A1-TRANSFORMER-AND-LOSS.md)、[10 月 27 日](../notes/2026-10-27-A1-TRAINING-AND-CHECKPOINT.md)。[源码归档](../implementations/a1-basics/README.md)保存累计实现；上游测试、数据和 checkpoint 未上传。
+详细变更与测试范围见 [10 月 26 日](../notes/2026-10-26-A1-TRANSFORMER-AND-LOSS.md)、[10 月 27 日早期训练组件](../notes/2026-10-27-A1-TRAINING-AND-CHECKPOINT.md)及[晚间训练与实验](../notes/2026-10-27-A1-TRAINING-GENERATION-AND-EXPERIMENTS.md)。[源码归档](../implementations/a1-basics/README.md)保存累计实现；上游测试、数据和 checkpoint 未上传。
+
+当前下一步：batch size 对比先明确固定处理 token 预算或固定更新步数；后做移除 RMSNorm、post-norm、SwiGLU→SiLU。正式生成题至少 256 token（或至 EOS）、完整数据与推导题仍需补齐。本地讲义 CPU/MPS 建议约处理 4000 万 token，本次每组仅 25.6 万；样本数值不与正式目标直接比较。
 
 ### 要写的东西（按依赖顺序）
 

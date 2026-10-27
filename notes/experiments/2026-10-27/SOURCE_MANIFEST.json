@@ -1,0 +1,190 @@
+{
+  "date": "2026-10-27",
+  "description": "CSV 原样复制；JSON 移除机器绝对路径，标记存档未上传；图未平滑。",
+  "artifacts": [
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/rope_ablation_runs/20261027_224427_418963_seed42/summary.json",
+      "archive": "notes/experiments/2026-10-27/rope/seed42/summary.json",
+      "source_sha256": "4a8549a63ac28d3a4da3cabbe9e4959e012fd3e7b21435a88b9236713108013a",
+      "archive_sha256": "3aa693cb94298a170c2b776000929d5a416e19ea4d423e4c4547491dee20c5c0",
+      "transformation": "portable metadata paths or aggregate CSV"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/rope_ablation_runs/20261027_224427_418963_seed42/with_rope_loss.csv",
+      "archive": "notes/experiments/2026-10-27/rope/seed42/with_rope_loss.csv",
+      "source_sha256": "445723af3e0dfd2e4124d1e43a4362a61c0a168e0e4fa27b5b5280cedc75a8e6",
+      "archive_sha256": "445723af3e0dfd2e4124d1e43a4362a61c0a168e0e4fa27b5b5280cedc75a8e6",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/rope_ablation_runs/20261027_224427_418963_seed42/without_rope_loss.csv",
+      "archive": "notes/experiments/2026-10-27/rope/seed42/without_rope_loss.csv",
+      "source_sha256": "fdaf6a132f974ae6f23b36b1bba610728bc688470a8a316e3669c3b7956f3e0b",
+      "archive_sha256": "fdaf6a132f974ae6f23b36b1bba610728bc688470a8a316e3669c3b7956f3e0b",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/rope_ablation_runs/20261027_230744_260519_seed43/summary.json",
+      "archive": "notes/experiments/2026-10-27/rope/seed43/summary.json",
+      "source_sha256": "e2a35470c555806ae6d5d29a188bb3dd46dbda65f2a2f0a4331427d8f396ab3c",
+      "archive_sha256": "ee00e3bb4433cdb149e6d0bca6922c25f1cbcac082877fb4beff441e3e5421d8",
+      "transformation": "portable metadata paths or aggregate CSV"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/rope_ablation_runs/20261027_230744_260519_seed43/with_rope_loss.csv",
+      "archive": "notes/experiments/2026-10-27/rope/seed43/with_rope_loss.csv",
+      "source_sha256": "5b87bf49d7d06b48eae838ca8e0775d7f40270bc490fde7e382766cdb498bd23",
+      "archive_sha256": "5b87bf49d7d06b48eae838ca8e0775d7f40270bc490fde7e382766cdb498bd23",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/rope_ablation_runs/20261027_230744_260519_seed43/without_rope_loss.csv",
+      "archive": "notes/experiments/2026-10-27/rope/seed43/without_rope_loss.csv",
+      "source_sha256": "1d0c1eed71386a63b351639a0d2f66eb8ec472a484046ffd063b9ae1ce65ee97",
+      "archive_sha256": "1d0c1eed71386a63b351639a0d2f66eb8ec472a484046ffd063b9ae1ce65ee97",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/rope_ablation_runs/20261027_230949_645298_seed44/summary.json",
+      "archive": "notes/experiments/2026-10-27/rope/seed44/summary.json",
+      "source_sha256": "ccfb32cb59f710c71a2af2fd6d98a5f88ea457dfacc7e0eb581a862f010696b6",
+      "archive_sha256": "8d3d535f08ecf767a50875769a551c9007b72088638914565b63459f1319347a",
+      "transformation": "portable metadata paths or aggregate CSV"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/rope_ablation_runs/20261027_230949_645298_seed44/with_rope_loss.csv",
+      "archive": "notes/experiments/2026-10-27/rope/seed44/with_rope_loss.csv",
+      "source_sha256": "06aa6ffae8a9b64087f448215752a0d389a62bd224a8a6f24bf6f36bac8a778b",
+      "archive_sha256": "06aa6ffae8a9b64087f448215752a0d389a62bd224a8a6f24bf6f36bac8a778b",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/rope_ablation_runs/20261027_230949_645298_seed44/without_rope_loss.csv",
+      "archive": "notes/experiments/2026-10-27/rope/seed44/without_rope_loss.csv",
+      "source_sha256": "772bbd586b89f49cde8aaaf2b7fa88b8952914e7853d25a8f0845030a769c181",
+      "archive_sha256": "772bbd586b89f49cde8aaaf2b7fa88b8952914e7853d25a8f0845030a769c181",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/rope_ablation_runs/multiseed_20261027_231146_817265/multi_seed_summary.json",
+      "archive": "notes/experiments/2026-10-27/rope/multi_seed_summary.json",
+      "source_sha256": "f5e802aa3459c72761d6c2a9fc28fbfd4a4da043284d405abc7faa801b82ba99",
+      "archive_sha256": "8c0bd3bc4c874a91c30d278a294ca7bce42bdb9eedd5d4a2878b4d5ba99ee692",
+      "transformation": "portable metadata paths or aggregate CSV"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/rope_ablation_runs/multiseed_20261027_231146_817265/multi_seed_results.csv",
+      "archive": "notes/experiments/2026-10-27/rope/multi_seed_results.csv",
+      "source_sha256": "ed93a65f20c5d65ced90c9b986dfc33b744142a7123427413f78353bd0a43a07",
+      "archive_sha256": "7d6d5f07b1475d20989528079a92604d8ee1ffe2e316b5cbb5d2403fb2d64a89",
+      "transformation": "portable metadata paths or aggregate CSV"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_0.001_loss.csv",
+      "archive": "notes/experiments/2026-10-27/lr/lr_0.001_loss.csv",
+      "source_sha256": "ff77382205c8584fae209d3b0822eff0d2f6d57f7d596cfc658e820dbdf687fa",
+      "archive_sha256": "ff77382205c8584fae209d3b0822eff0d2f6d57f7d596cfc658e820dbdf687fa",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_0.003_loss.csv",
+      "archive": "notes/experiments/2026-10-27/lr/lr_0.003_loss.csv",
+      "source_sha256": "445723af3e0dfd2e4124d1e43a4362a61c0a168e0e4fa27b5b5280cedc75a8e6",
+      "archive_sha256": "445723af3e0dfd2e4124d1e43a4362a61c0a168e0e4fa27b5b5280cedc75a8e6",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_0.01_loss.csv",
+      "archive": "notes/experiments/2026-10-27/lr/lr_0.01_loss.csv",
+      "source_sha256": "4550745739bb6d0b5894bbfcdfcfe73c04edec35358dd991ce9540e7fe66d718",
+      "archive_sha256": "4550745739bb6d0b5894bbfcdfcfe73c04edec35358dd991ce9540e7fe66d718",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_0.03_loss.csv",
+      "archive": "notes/experiments/2026-10-27/lr/lr_0.03_loss.csv",
+      "source_sha256": "78f187fb1d10ac41720669736a3ad548ed026fdd0753e52f7a277f91697c3490",
+      "archive_sha256": "78f187fb1d10ac41720669736a3ad548ed026fdd0753e52f7a277f91697c3490",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_0.1_loss.csv",
+      "archive": "notes/experiments/2026-10-27/lr/lr_0.1_loss.csv",
+      "source_sha256": "8fd89b672fd9f495581d2005cec443cb3cb28cb4af3c2b00fad554949f9fb0aa",
+      "archive_sha256": "8fd89b672fd9f495581d2005cec443cb3cb28cb4af3c2b00fad554949f9fb0aa",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_0.3_loss.csv",
+      "archive": "notes/experiments/2026-10-27/lr/lr_0.3_loss.csv",
+      "source_sha256": "0c5f8dbb28deb6170e71f28fc411de895ee127e66b30e34204ab5a1d983aebcd",
+      "archive_sha256": "0c5f8dbb28deb6170e71f28fc411de895ee127e66b30e34204ab5a1d983aebcd",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_1_loss.csv",
+      "archive": "notes/experiments/2026-10-27/lr/lr_1_loss.csv",
+      "source_sha256": "aa8b50d59b9b1389b73582c4a1798307c6f3e6ed7651971d3e9e2075887cd9b0",
+      "archive_sha256": "aa8b50d59b9b1389b73582c4a1798307c6f3e6ed7651971d3e9e2075887cd9b0",
+      "transformation": "none"
+    },
+    {
+      "source_root": "learning_repository",
+      "source": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_sweep_summary.json",
+      "archive": "notes/experiments/2026-10-27/lr/lr_sweep_summary.json",
+      "source_sha256": "084e281121c792a06455b2ffba8fcc140121b59d5fe2cad88ea9cf846ae7aa93",
+      "archive_sha256": "9f3d9de2a5119503cbd628eba2e8b6e220d016739b32cf51488f9e3c535a9eeb",
+      "transformation": "portable metadata paths or aggregate CSV"
+    },
+    {
+      "source_root": "codex_workspace",
+      "source": "work/rope-ablation/curve-analysis/rope-validation-curves.png",
+      "archive": "notes/assets/2026-10-27/rope-validation-curves.png",
+      "source_sha256": "680e8d50631a06954c697b817d9f420418b324e821aa34a5c76bce846308d92e",
+      "archive_sha256": "680e8d50631a06954c697b817d9f420418b324e821aa34a5c76bce846308d92e",
+      "transformation": "none"
+    },
+    {
+      "source_root": "codex_workspace",
+      "source": "work/rope-ablation/curve-analysis/rope-validation-curves.svg",
+      "archive": "notes/assets/2026-10-27/rope-validation-curves.svg",
+      "source_sha256": "d2be4b7e0e5d3ab5c3e3c7ebd431cb13920a546e103d5c572b79b3bfa9f1b27c",
+      "archive_sha256": "d2be4b7e0e5d3ab5c3e3c7ebd431cb13920a546e103d5c572b79b3bfa9f1b27c",
+      "transformation": "none"
+    },
+    {
+      "source_root": "codex_workspace",
+      "source": "work/rope-ablation/lr-analysis/learning-rate-curves.png",
+      "archive": "notes/assets/2026-10-27/learning-rate-curves.png",
+      "source_sha256": "ae96c403d675799670bf93ed98280d9f2a9acc9e7a6af34bc9fab0c65559c92d",
+      "archive_sha256": "ae96c403d675799670bf93ed98280d9f2a9acc9e7a6af34bc9fab0c65559c92d",
+      "transformation": "none"
+    },
+    {
+      "source_root": "codex_workspace",
+      "source": "work/rope-ablation/lr-analysis/learning-rate-curves.svg",
+      "archive": "notes/assets/2026-10-27/learning-rate-curves.svg",
+      "source_sha256": "9c628f1d54d8487e8c23be3bde1407c86b83b6af5bda84956830354c6346d679",
+      "archive_sha256": "9c628f1d54d8487e8c23be3bde1407c86b83b6af5bda84956830354c6346d679",
+      "transformation": "none"
+    }
+  ]
+}

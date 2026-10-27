@@ -1,7 +1,7 @@
 {
-  "snapshot_date": "2026-10-27",
+  "snapshot_date": "2026-10-28",
   "description": "本人实现的累计源码快照；不包含上游 starter、测试、数据或模型产物。",
-  "copied_module_count": 30,
+  "copied_module_count": 38,
   "modules": [
     {
       "source": "assignments/a1-basics/cs336_basics/attention.py",
@@ -52,6 +52,18 @@
       "source_modified_at": "2026-10-25T20:39:13+08:00"
     },
     {
+      "source": "assignments/a1-basics/cs336_basics/generate_5m.py",
+      "archive": "implementations/a1-basics/cs336_basics/generate_5m.py",
+      "sha256": "4b8e699d517c58bf5b6d813d52fd8cd2c9153aa688eba7c617ea8e9a25f531ed",
+      "source_modified_at": "2026-10-27T23:55:34+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/generate_demo.py",
+      "archive": "implementations/a1-basics/cs336_basics/generate_demo.py",
+      "sha256": "a1c43341835a1328dff9bc704dc31d3bb5d8f8abd4cc35ad3aefe509817aa088",
+      "source_modified_at": "2026-10-27T21:56:00+08:00"
+    },
+    {
       "source": "assignments/a1-basics/cs336_basics/gradient_demo.py",
       "archive": "implementations/a1-basics/cs336_basics/gradient_demo.py",
       "sha256": "3765937890514ec65f409142a9dd6843cd6bb3d3f562cb3ca74a5b0af74066ed",
@@ -100,6 +112,12 @@
       "source_modified_at": "2026-10-27T00:04:23+08:00"
     },
     {
+      "source": "assignments/a1-basics/cs336_basics/prepare_5m_tokens.py",
+      "archive": "implementations/a1-basics/cs336_basics/prepare_5m_tokens.py",
+      "sha256": "dfa3a2a45cf0087350de0b49da18abc534aab3b17c010d599a2e933f0d2e2cff",
+      "source_modified_at": "2026-10-27T22:03:43+08:00"
+    },
+    {
       "source": "assignments/a1-basics/cs336_basics/prepare_tokens.py",
       "archive": "implementations/a1-basics/cs336_basics/prepare_tokens.py",
       "sha256": "174822ddc9747bd173fe02e19be60c8ef527cb834f8a46e07851a336c7a450b7",
@@ -128,6 +146,12 @@
       "archive": "implementations/a1-basics/cs336_basics/rope_demo.py",
       "sha256": "463945ad0c97591e04d3fcbe6121d9481a6b9757de52b6b3a20c1fb9128d1e90",
       "source_modified_at": "2026-10-26T23:30:32+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/run_rope_multiseed.py",
+      "archive": "implementations/a1-basics/cs336_basics/run_rope_multiseed.py",
+      "sha256": "899096a9c0f9db996cc5c1d35a2cb73a4a62f36cff191eabb08e575bfcfda014",
+      "source_modified_at": "2026-10-27T22:58:41+08:00"
     },
     {
       "source": "assignments/a1-basics/cs336_basics/silu_demo.py",
@@ -160,10 +184,34 @@
       "source_modified_at": "2026-10-25T20:06:25+08:00"
     },
     {
+      "source": "assignments/a1-basics/cs336_basics/train_5m.py",
+      "archive": "implementations/a1-basics/cs336_basics/train_5m.py",
+      "sha256": "cd61f679c81c3c10d28fda2a445bcb86c296f7d4b30e6edda7be1d104bf0b887",
+      "source_modified_at": "2026-10-27T23:55:34+08:00"
+    },
+    {
       "source": "assignments/a1-basics/cs336_basics/train_demo.py",
       "archive": "implementations/a1-basics/cs336_basics/train_demo.py",
       "sha256": "ea7fb63ee421742a21ea05dc33e9c1e29f281bc90c940b2df1d7d35c95241571",
       "source_modified_at": "2026-10-27T00:22:55+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/train_loop.py",
+      "archive": "implementations/a1-basics/cs336_basics/train_loop.py",
+      "sha256": "2ce3ae5d3b1e58d96d7dc4fe0aa99902d15fc04ba85b83f13d257cabba033a56",
+      "source_modified_at": "2026-10-27T21:30:33+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/train_lr_sweep.py",
+      "archive": "implementations/a1-basics/cs336_basics/train_lr_sweep.py",
+      "sha256": "aabe3ce0fbd23f68e9a3360393566567b1b8db1e8c410b597ff131a592324232",
+      "source_modified_at": "2026-10-27T23:22:46+08:00"
+    },
+    {
+      "source": "assignments/a1-basics/cs336_basics/train_rope_ablation.py",
+      "archive": "implementations/a1-basics/cs336_basics/train_rope_ablation.py",
+      "sha256": "8062a01b5908f4b37caca4192045cb453e0d56109ca2a7c34a77be6b46ea633c",
+      "source_modified_at": "2026-10-27T22:40:16+08:00"
     },
     {
       "source": "assignments/a1-basics/cs336_basics/transformer_block.py",
@@ -227,6 +275,34 @@
       "test_optimizer.py",
       "test_data.py",
       "test_serialization.py"
-    ]
-  }
+    ],
+    "elapsed_seconds": 10.13,
+    "python_syntax_files": 40,
+    "source_hash_matches": 38,
+    "phase": "evening snapshot",
+    "warnings": 1,
+    "warning_note": "PytestAssertRewriteWarning: jaxtyping was pre-imported by verification wrapper"
+  },
+  "snapshot_phase": "2026-10-27 evening: training, generation and controlled experiments",
+  "additional_experiment_checks": {
+    "rope_seeds": [
+      42,
+      43,
+      44
+    ],
+    "rope_complete_runs": 6,
+    "lr_candidates": [
+      0.001,
+      0.003,
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1.0
+    ],
+    "lr_complete_runs": 7,
+    "lr_reused_runs": 1,
+    "numerical_divergence_observed": false
+  },
+  "learning_date": "2026-10-27"
 }
