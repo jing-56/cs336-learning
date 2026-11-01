@@ -1,0 +1,12 @@
+{
+  "arrays_directory": "assignments/a1-basics/data/tokenized_tinystories_full/20261101_192402_611757",
+  "encoding_metadata_sha256": "9022cb0db90b3c85ceaada3578cb8592bdb2d0ddd2f39a31aa0c7633bfcf887e",
+  "tokenizer_directory": "assignments/a1-basics/cs336_basics/bpe_corpus_runs/20261101_190151_430986",
+  "vocab_sha256": "b9a3565b55d0b16c03a7fd876296207084932b799923418055c7d48cacb7b7ea",
+  "merges_sha256": "41eec5a68dd9034e81890b73f80f0e7ae0618f9063cc4cb19f51586c8801d41f",
+  "new_training_from_random_initialization": true,
+  "dataset_file_hashes_in_checkpoint": {
+    "train": "5ccfd3db1d60c4fe5292f385f90d1f1488e54e23ab2f5e171dcf61a4d415cd4f",
+    "val": "fb6e6f6401a34283be03ed6acdc97593602378869d52d00300510292d44b0e2b"
+  }
+}

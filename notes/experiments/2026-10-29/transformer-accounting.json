@@ -1,0 +1,237 @@
+{
+  "problem": "transformer_accounting (a)-(e)",
+  "source": "cs336_assignment1_basics.pdf, printed pages 27-28; SwiGLU rounding on page 22",
+  "architecture": "Assignment architecture; not the original released GPT-2 architecture",
+  "assumptions": {
+    "batch_size": 1,
+    "fp32_bytes": 4,
+    "tied_embeddings": false,
+    "biases": false,
+    "count": "dense matmul FLOPs only; multiply-accumulate counts as 2 FLOPs",
+    "causal_attention": "full dense QK and AV; no triangular FLOPs discount",
+    "secondary_model_ffn_rounding": "ceil(8*d_model/(3*64))*64; XL explicitly 4288",
+    "memory": "parameter storage only; excludes buffers, activations, gradients, optimizer and runtime"
+  },
+  "models": [
+    {
+      "name": "GPT-2 small-sized",
+      "num_layers": 12,
+      "d_model": 768,
+      "num_heads": 12,
+      "head_dim": 64,
+      "d_ff": 2048,
+      "vocab_size": 50257,
+      "context_length": 1024,
+      "batch_size": 1,
+      "parameter_parts": {
+        "input_embedding": 38597376,
+        "attention_projections": 28311552,
+        "swiglu": 56623104,
+        "rmsnorm": 19200,
+        "output_head": 38597376
+      },
+      "parameters": 162148608,
+      "fp32_parameter_bytes": 648594432,
+      "fp32_parameter_GB": 0.648594432,
+      "fp32_parameter_GiB": 0.6040506362915039,
+      "flops_parts": {
+        "attention_projections": 57982058496,
+        "attention_qk_av": 38654705664,
+        "swiglu": 115964116992,
+        "output_head": 79047426048
+      },
+      "forward_matmul_flops": 291648307200,
+      "flops_proportions": {
+        "attention_projections": 0.1988081434542268,
+        "attention_qk_av": 0.13253876230281786,
+        "swiglu": 0.3976162869084536,
+        "output_head": 0.2710368073345018
+      },
+      "matrix_costs_per_layer": {
+        "qkv_each": 1207959552,
+        "attention_output": 1207959552,
+        "qk": 1610612736,
+        "av": 1610612736,
+        "ffn_each": 3221225472,
+        "output_head": 79047426048
+      }
+    },
+    {
+      "name": "GPT-2 medium-sized",
+      "num_layers": 24,
+      "d_model": 1024,
+      "num_heads": 16,
+      "head_dim": 64,
+      "d_ff": 2752,
+      "vocab_size": 50257,
+      "context_length": 1024,
+      "batch_size": 1,
+      "parameter_parts": {
+        "input_embedding": 51463168,
+        "attention_projections": 100663296,
+        "swiglu": 202899456,
+        "rmsnorm": 50176,
+        "output_head": 51463168
+      },
+      "parameters": 406539264,
+      "fp32_parameter_bytes": 1626157056,
+      "fp32_parameter_GB": 1.626157056,
+      "fp32_parameter_GiB": 1.5144767761230469,
+      "flops_parts": {
+        "attention_projections": 206158430208,
+        "attention_qk_av": 103079215104,
+        "swiglu": 415538085888,
+        "output_head": 105396568064
+      },
+      "forward_matmul_flops": 830172299264,
+      "flops_proportions": {
+        "attention_projections": 0.24833209972287973,
+        "attention_qk_av": 0.12416604986143986,
+        "swiglu": 0.5005443885039295,
+        "output_head": 0.12695746191175097
+      },
+      "matrix_costs_per_layer": {
+        "qkv_each": 2147483648,
+        "attention_output": 2147483648,
+        "qk": 2147483648,
+        "av": 2147483648,
+        "ffn_each": 5771362304,
+        "output_head": 105396568064
+      }
+    },
+    {
+      "name": "GPT-2 large-sized",
+      "num_layers": 36,
+      "d_model": 1280,
+      "num_heads": 20,
+      "head_dim": 64,
+      "d_ff": 3456,
+      "vocab_size": 50257,
+      "context_length": 1024,
+      "batch_size": 1,
+      "parameter_parts": {
+        "input_embedding": 64328960,
+        "attention_projections": 235929600,
+        "swiglu": 477757440,
+        "rmsnorm": 93440,
+        "output_head": 64328960
+      },
+      "parameters": 842438400,
+      "fp32_parameter_bytes": 3369753600,
+      "fp32_parameter_GB": 3.3697536,
+      "fp32_parameter_GiB": 3.1383275985717773,
+      "flops_parts": {
+        "attention_projections": 483183820800,
+        "attention_qk_av": 193273528320,
+        "swiglu": 978447237120,
+        "output_head": 131745710080
+      },
+      "forward_matmul_flops": 1786650296320,
+      "flops_proportions": {
+        "attention_projections": 0.27044118359100466,
+        "attention_qk_av": 0.10817647343640187,
+        "swiglu": 0.5476433967717844,
+        "output_head": 0.07373894620080904
+      },
+      "matrix_costs_per_layer": {
+        "qkv_each": 3355443200,
+        "attention_output": 3355443200,
+        "qk": 2684354560,
+        "av": 2684354560,
+        "ffn_each": 9059696640,
+        "output_head": 131745710080
+      }
+    },
+    {
+      "name": "GPT-2 XL-sized",
+      "num_layers": 48,
+      "d_model": 1600,
+      "num_heads": 25,
+      "head_dim": 64,
+      "d_ff": 4288,
+      "vocab_size": 50257,
+      "context_length": 1024,
+      "batch_size": 1,
+      "parameter_parts": {
+        "input_embedding": 80411200,
+        "attention_projections": 491520000,
+        "swiglu": 987955200,
+        "rmsnorm": 155200,
+        "output_head": 80411200
+      },
+      "parameters": 1640452800,
+      "fp32_parameter_bytes": 6561811200,
+      "fp32_parameter_GB": 6.5618112,
+      "fp32_parameter_GiB": 6.111162900924683,
+      "flops_parts": {
+        "attention_projections": 1006632960000,
+        "attention_qk_av": 322122547200,
+        "swiglu": 2023332249600,
+        "output_head": 164682137600
+      },
+      "forward_matmul_flops": 3516769894400,
+      "flops_proportions": {
+        "attention_projections": 0.28623793714878315,
+        "attention_qk_av": 0.09159613988761062,
+        "swiglu": 0.5753382536690541,
+        "output_head": 0.046827669294552066
+      },
+      "matrix_costs_per_layer": {
+        "qkv_each": 5242880000,
+        "attention_output": 5242880000,
+        "qk": 3355443200,
+        "av": 3355443200,
+        "ffn_each": 14050918400,
+        "output_head": 164682137600
+      }
+    }
+  ],
+  "xl_long_context": {
+    "name": "GPT-2 XL-sized, longer context",
+    "num_layers": 48,
+    "d_model": 1600,
+    "num_heads": 25,
+    "head_dim": 64,
+    "d_ff": 4288,
+    "vocab_size": 50257,
+    "context_length": 16384,
+    "batch_size": 1,
+    "parameter_parts": {
+      "input_embedding": 80411200,
+      "attention_projections": 491520000,
+      "swiglu": 987955200,
+      "rmsnorm": 155200,
+      "output_head": 80411200
+    },
+    "parameters": 1640452800,
+    "fp32_parameter_bytes": 6561811200,
+    "fp32_parameter_GB": 6.5618112,
+    "fp32_parameter_GiB": 6.111162900924683,
+    "flops_parts": {
+      "attention_projections": 16106127360000,
+      "attention_qk_av": 82463372083200,
+      "swiglu": 32373315993600,
+      "output_head": 2634914201600
+    },
+    "forward_matmul_flops": 133577729638400,
+    "flops_proportions": {
+      "attention_projections": 0.1205749446677968,
+      "attention_qk_av": 0.6173437166991196,
+      "swiglu": 0.24235563878227157,
+      "output_head": 0.019725699850812056
+    },
+    "matrix_costs_per_layer": {
+      "qkv_each": 83886080000,
+      "attention_output": 83886080000,
+      "qk": 858993459200,
+      "av": 858993459200,
+      "ffn_each": 224814694400,
+      "output_head": 2634914201600
+    }
+  },
+  "long_context_flops_ratio": 37.983073573026545,
+  "small_model_crosscheck": {
+    "parameters": 1362240,
+    "forward_matmul_flops": 378011648
+  }
+}

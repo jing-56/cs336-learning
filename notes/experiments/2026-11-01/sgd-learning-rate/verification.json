@@ -1,0 +1,12 @@
+{
+  "closed_form_loss_recurrence_checked": true,
+  "recurrence": "L_(t+1) = L_t * (1 - lr / (50 * sqrt(t+1)))**2",
+  "loss_comparison_relative_tolerance": 1e-05,
+  "loss_comparison_absolute_tolerance": 1e-12,
+  "unicode_examples_checked": true,
+  "hello_bytes_without_bom": {
+    "utf-8": 5,
+    "utf-16-le": 10,
+    "utf-32-le": 20
+  }
+}

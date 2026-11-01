@@ -1,0 +1,129 @@
+{
+  "run_directory_relative_to_repo": "assignments/a1-basics/cs336_basics/bpe_corpus_runs/20261101_190151_430986",
+  "source_dataset_revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+  "summary": {
+    "split_usage": "full_training_corpus",
+    "input_filename": "TinyStoriesV2-GPT4-train.txt",
+    "input_bytes": 2227753162,
+    "input_sha256": "6418d412de72888f52b5142c761ac21a582f7d1166f0bfbdb5f03ccfdec90443",
+    "target_vocab_size": 10000,
+    "actual_vocab_size": 10000,
+    "merges": 9743,
+    "special_tokens": [
+      "<|endoftext|>"
+    ],
+    "training_seconds_without_profiler": 841.4560502999993,
+    "training_seconds_with_profiler": null,
+    "profiler_enabled": false,
+    "bpe_source_sha256": "e135bd34a7c4c28ed44a3783bd07c708e84bc305fe0369f2223a663931679d7d",
+    "process_rss_before_bytes": 27930624,
+    "process_rss_after_bytes": 75988992,
+    "windows_process_lifetime_peak_before_profiling_bytes": 102305792,
+    "longest_normal_token_hex": "20726573706f6e736962696c697479",
+    "longest_normal_token_repr": "b' responsibility'",
+    "longest_normal_token_bytes": 15,
+    "roundtrip_example": "A robot opened the window and watched the stars. 你好！",
+    "roundtrip": true,
+    "profiled_and_unprofiled_vocab_merges_identical": null
+  },
+  "artifact_sha256": {
+    "vocab.pkl": "b9a3565b55d0b16c03a7fd876296207084932b799923418055c7d48cacb7b7ea",
+    "merges.pkl": "41eec5a68dd9034e81890b73f80f0e7ae0618f9063cc4cb19f51586c8801d41f"
+  },
+  "validation_checks": {
+    "continuous_ids": true,
+    "unique_vocab_byte_entries": true,
+    "all_merge_dependencies_and_token_ids_valid": true,
+    "special_token_excluded_from_merges": true,
+    "ten_validation_documents": [
+      {
+        "validation_segment_position_1based": 5420,
+        "utf8_bytes": 647,
+        "tokens": 161,
+        "text_sha256": "28d1d80d48e72b36cc4277f648e472a1fb91a4079af757b8b0dffb87f68481ed",
+        "roundtrip": true,
+        "ends_with_eos_id": true
+      },
+      {
+        "validation_segment_position_1based": 5551,
+        "utf8_bytes": 856,
+        "tokens": 202,
+        "text_sha256": "533b040e79a2b9c383024aabefa6775cf9117743e05142c1e16900d422f60fbe",
+        "roundtrip": true,
+        "ends_with_eos_id": true
+      },
+      {
+        "validation_segment_position_1based": 6133,
+        "utf8_bytes": 620,
+        "tokens": 149,
+        "text_sha256": "6a3fc8a33573be27ad2d355d3ccdb08c4e767aae5fc5933a12cc1975d90171b4",
+        "roundtrip": true,
+        "ends_with_eos_id": true
+      },
+      {
+        "validation_segment_position_1based": 7827,
+        "utf8_bytes": 878,
+        "tokens": 205,
+        "text_sha256": "134eea67011b1344cbb688f8b353b8032e349126dfcaabb40ce597768abc4727",
+        "roundtrip": true,
+        "ends_with_eos_id": true
+      },
+      {
+        "validation_segment_position_1based": 15153,
+        "utf8_bytes": 745,
+        "tokens": 184,
+        "text_sha256": "faf8c2fccfe8b6ecbc8c3bdefbfb7b1d215c9c0310a7ec5539076a87cd6b27e0",
+        "roundtrip": true,
+        "ends_with_eos_id": true
+      },
+      {
+        "validation_segment_position_1based": 18149,
+        "utf8_bytes": 561,
+        "tokens": 138,
+        "text_sha256": "97edb77449fd7ca09c546e5273a440450701ffac77eb7e9bca39e954cedd2d08",
+        "roundtrip": true,
+        "ends_with_eos_id": true
+      },
+      {
+        "validation_segment_position_1based": 18154,
+        "utf8_bytes": 571,
+        "tokens": 151,
+        "text_sha256": "473fdc6bdb6f2fcbf9b16f9645af8331e6d6f65ce07f8259e47bb0b2822b6f2e",
+        "roundtrip": true,
+        "ends_with_eos_id": true
+      },
+      {
+        "validation_segment_position_1based": 19142,
+        "utf8_bytes": 704,
+        "tokens": 166,
+        "text_sha256": "77de8e2a923761e1b7d177b04d4f1df088fa4680acaedefd79ef17e944464a4d",
+        "roundtrip": true,
+        "ends_with_eos_id": true
+      },
+      {
+        "validation_segment_position_1based": 19797,
+        "utf8_bytes": 896,
+        "tokens": 220,
+        "text_sha256": "ddc866df851be78a872a73eb2e88872263300a19918299f27e2b1e79799855fe",
+        "roundtrip": true,
+        "ends_with_eos_id": true
+      },
+      {
+        "validation_segment_position_1based": 22774,
+        "utf8_bytes": 778,
+        "tokens": 187,
+        "text_sha256": "273922c11f63de63b42cd2af8b0fc6da833cd204fc2643a11c0c4ac61d50a294",
+        "roundtrip": true,
+        "ends_with_eos_id": true
+      }
+    ],
+    "reservoir_seed": 42,
+    "eligible_complete_validation_documents": 27628
+  },
+  "different_id_mappings_vs_5mb_sample": 9656,
+  "different_id_mappings_vs_validation_debug": 9590,
+  "normal_training_within_handout_30_minute_budget": true,
+  "peak_working_set_mib": 97.56640625,
+  "full_training_corpus_profile_completed": false,
+  "model_training_or_full_corpus_tokenization_completed_by_this_run": false
+}

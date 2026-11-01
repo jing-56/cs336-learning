@@ -1,0 +1,62 @@
+{
+  "installed_torch": "2.11.0+cu126",
+  "cuda_available": true,
+  "gpu_verification_and_benchmark": {
+    "torch_version": "2.11.0+cu126",
+    "built_cuda": "12.6",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpu_total_memory_bytes": 4294443008,
+    "dtype": "float32",
+    "batch_size": 8,
+    "context_length": 256,
+    "cpu_loss_same_checkpoint_batch": 5.945350170135498,
+    "gpu_loss_same_checkpoint_batch": 5.945350170135498,
+    "maximum_logit_absolute_difference": 2.384185791015625e-06,
+    "cpu_gpu_logits_close": true,
+    "optimizer_moments_on_cuda": true,
+    "timing_cuda_synchronized": true,
+    "warmup_updates": 2,
+    "measured_updates": 10,
+    "seconds_per_update": 0.07877394999959506,
+    "target_tokens_per_second": 25998.442378610285,
+    "estimated_20000_update_minutes_excluding_evaluation_checkpoints": 26.257983333198354,
+    "cuda_peak_allocated_bytes": 482663424,
+    "cuda_peak_reserved_bytes": 545259520
+  },
+  "speedup_vs_cpu_8threads_short_benchmark": 4.282846804057274,
+  "gpu_resume": {
+    "source_cpu_step": 100,
+    "completed_step": 200,
+    "actual_gpu_updates": 100,
+    "gpu_active_training_and_validation_seconds": 8.454321100001835,
+    "validation_loss_at_cpu_step100": 6.003516340255738,
+    "validation_loss_at_gpu_step200": 4.397028398513794,
+    "checkpoint_relative_to_repo": "assignments/a1-basics/cs336_basics/training_runs/20261101_gpu_from_cpu100/checkpoint_step_000200.pt",
+    "total_plan_steps": 20000,
+    "actual_target_tokens_so_far": 409600,
+    "same_model_at_migration": true,
+    "optimizer_and_cpu_python_numpy_rng_exact_equality_verified_before_training": true,
+    "source_cpu_checkpoint_sha256": "e626ff0d1372a136f56bc60d177f73ca7d635d029493a6b954b550ebe2f5cb23",
+    "source_cpu_checkpoint_unmodified": true
+  },
+  "official_wheel": {
+    "url": "https://download-r2.pytorch.org/whl/cu126/torch-2.11.0%2Bcu126-cp312-cp312-win_amd64.whl",
+    "filename": "torch-2.11.0+cu126-cp312-cp312-win_amd64.whl",
+    "size": 2596453924,
+    "sha256": "1b7d728ddcf84b12f64ca10ec5f6ce91dd9edcc5e62ed5f0a7260ca00f029e8b",
+    "sha256_verified": true
+  },
+  "driver_version": "546.92",
+  "driver_modified": false,
+  "regression_tests": {
+    "passed": 46,
+    "skipped": 2,
+    "seconds": 17.059,
+    "scope": "official suite on CUDA-enabled PyTorch; predominantly CPU tests, actual CUDA training separately verified"
+  },
+  "cuda_cache": {
+    "project_directory_created": true,
+    "new_gpu_config_one_step_without_directory_warning": true,
+    "cross_process_cache_speedup_not_benchmarked": true
+  }
+}

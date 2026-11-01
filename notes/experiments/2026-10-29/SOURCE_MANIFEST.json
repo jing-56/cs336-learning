@@ -1,0 +1,83 @@
+{
+  "artifacts": [
+    {
+      "archive": "notes/experiments/2026-10-29/batch-size/batch_2_loss.csv",
+      "sha256": "1b872a26fb67326fc5adc501bc2857755495856e42c3e49e27cb676bb7b0c24c",
+      "transformation": "none"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/batch-size/batch_4_loss.csv",
+      "sha256": "6fd21f0c32a216819e291026311481d929f6334190df4c5eff1b1e319508c587",
+      "transformation": "none"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/batch-size/batch_8_loss.csv",
+      "sha256": "27f6a7af7ccca4625d71bc6896339dae22555a2f8320869c77e3755003966443",
+      "transformation": "none"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/batch-size/batch_size_summary.json",
+      "source_sha256": "5257b4cc89952f2cf199170c42da9c6d92998548234ba48bf36c17b35a18e950",
+      "sha256": "5508e5c63ee7cbbd3c00eb3d707e78aa09cfc6fea5c9c936d9132b849fc89677",
+      "transformation": "portable curve filenames, checkpoint filename/unuploaded flag, provenance paths"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/post-norm/post_norm_loss.csv",
+      "sha256": "6885392bd643a04682e81b5adbfe17355f8d845ab647736bc78e0488330206d7",
+      "transformation": "none"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/post-norm/pre_norm_loss.csv",
+      "sha256": "445723af3e0dfd2e4124d1e43a4362a61c0a168e0e4fa27b5b5280cedc75a8e6",
+      "transformation": "none"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/post-norm/post_norm_summary.json",
+      "source_sha256": "c46d66170ba135700dd1a0950b7c0df96600403a9efba0fee50ae05175140d29",
+      "sha256": "c27be4433b00c825c2dded0f04c27e97322d2921f78a3efa2fa7dfd21d26bb1b",
+      "transformation": "portable curve filenames, checkpoint filename/unuploaded flag, provenance paths"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/rmsnorm/without_norm_lr_0.0003_loss.csv",
+      "sha256": "5328a28ee144df485cc10b8c23b3521366c68a6d0bcf1bb750ef005317334da2",
+      "transformation": "none"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/rmsnorm/without_norm_lr_0.001_loss.csv",
+      "sha256": "ef73f49ddd2720cc00c69ac9df70e5b9e4a6b6b988d11757142d67ed4c4f4cdb",
+      "transformation": "none"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/rmsnorm/without_norm_lr_0.003_loss.csv",
+      "sha256": "bb1ec46236a9b6939a56d33a937e262d8dd5bdba97d96acc4039682b6e08a997",
+      "transformation": "none"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/rmsnorm/with_norm_lr_0.003_loss.csv",
+      "sha256": "445723af3e0dfd2e4124d1e43a4362a61c0a168e0e4fa27b5b5280cedc75a8e6",
+      "transformation": "none"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/rmsnorm/norm_ablation_summary.json",
+      "source_sha256": "6a1977767d3bc3d12b10793aeb316089d878a9b9bd931b7e8d6edd284073e1c9",
+      "sha256": "a8ec930638542b679eec8a956ac284c8babd6b490df46b4a1795aa6ffeaeefd5",
+      "transformation": "portable curve filenames, checkpoint filename/unuploaded flag, provenance paths"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/swiglu-silu/silu_loss.csv",
+      "sha256": "6e1bb6b9a6082b9251d9bdbf38bd1840c81ddc0aa66d66f85dd21721b44c264f",
+      "transformation": "none"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/swiglu-silu/swiglu_loss.csv",
+      "sha256": "445723af3e0dfd2e4124d1e43a4362a61c0a168e0e4fa27b5b5280cedc75a8e6",
+      "transformation": "none"
+    },
+    {
+      "archive": "notes/experiments/2026-10-29/swiglu-silu/silu_ablation_summary.json",
+      "source_sha256": "a86ef0219aece2321b1fef89e0c70d9cf2a3e00739d24ab60cac1605a7811a2f",
+      "sha256": "4ba27a68557be8326269c9d766918343f7ac7ede246894f738bcb797176f22ff",
+      "transformation": "portable curve filenames, checkpoint filename/unuploaded flag, provenance paths"
+    }
+  ]
+}

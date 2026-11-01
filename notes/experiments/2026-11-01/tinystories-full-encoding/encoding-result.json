@@ -1,0 +1,117 @@
+{
+  "source_dataset_revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+  "vocab_size": 10000,
+  "vocab_sha256": "b9a3565b55d0b16c03a7fd876296207084932b799923418055c7d48cacb7b7ea",
+  "merges_sha256": "41eec5a68dd9034e81890b73f80f0e7ae0618f9063cc4cb19f51586c8801d41f",
+  "encoder_source_sha256": "4f1e5101b4ad7e5ef382c7d0c9186db3e2451ab28ee93f627331774b71e7d611",
+  "cache_size": 100000,
+  "chunk_chars": 1048576,
+  "numpy_version": "2.4.4",
+  "newline_policy": "preserve exact source bytes",
+  "split_order": [
+    "valid",
+    "train"
+  ],
+  "splits": [
+    {
+      "split": "valid",
+      "source_filename": "TinyStoriesV2-GPT4-valid.txt",
+      "source_bytes": 22502601,
+      "source_sha256": "6874bae9a4c1a4e7edcf0e53b86c17817e9cf881fc75ff2368da457b80c0585d",
+      "output_filename": "valid.npy",
+      "token_count": 5465883,
+      "dtype": "<u2",
+      "array_data_bytes": 10931766,
+      "npy_file_bytes": 10931894,
+      "token_data_sha256": "5831fc18b035d8c133665d2af7bca926be6c401d195c0ad272554a5711cdc04d",
+      "min_token_id": 10,
+      "max_token_id": 9999,
+      "eos_count": 27630,
+      "eos_id": 256,
+      "batches": 23,
+      "full_byte_exact_roundtrip": true,
+      "saved_token_data_hash_matches": true,
+      "bytes_per_token": 4.116919626709902,
+      "encoding_roundtrip_raw_write_seconds": 7.582355599999573,
+      "npy_finalize_and_verify_seconds": 0.05487920000086888,
+      "total_seconds": 7.637234800000442,
+      "end_to_end_source_mb_per_second": 2.9464330466831656,
+      "cache_hits_this_split": 5405890,
+      "cache_misses_this_split": 13111,
+      "cache_entries_after_split": 13111,
+      "process_rss_after_bytes": 45211648,
+      "windows_process_lifetime_peak_working_set_bytes": 85827584
+    },
+    {
+      "split": "train",
+      "source_filename": "TinyStoriesV2-GPT4-train.txt",
+      "source_bytes": 2227753162,
+      "source_sha256": "6418d412de72888f52b5142c761ac21a582f7d1166f0bfbdb5f03ccfdec90443",
+      "output_filename": "train.npy",
+      "token_count": 541229347,
+      "dtype": "<u2",
+      "array_data_bytes": 1082458694,
+      "npy_file_bytes": 1082458822,
+      "token_data_sha256": "9ef3250b31cf6ab174cd42d2cf31fc70d451012e913b417faaa47a5b9f1e150b",
+      "min_token_id": 9,
+      "max_token_id": 9999,
+      "eos_count": 2717699,
+      "eos_id": 256,
+      "batches": 2125,
+      "full_byte_exact_roundtrip": true,
+      "saved_token_data_hash_matches": true,
+      "bytes_per_token": 4.116098238848826,
+      "encoding_roundtrip_raw_write_seconds": 686.1951090000002,
+      "npy_finalize_and_verify_seconds": 2.8124538000010944,
+      "total_seconds": 689.0075628000013,
+      "end_to_end_source_mb_per_second": 3.2332782429075477,
+      "cache_hits_this_split": 536545038,
+      "cache_misses_this_split": 47130,
+      "cache_entries_after_split": 60241,
+      "process_rss_after_bytes": 55599104,
+      "windows_process_lifetime_peak_working_set_bytes": 98992128
+    }
+  ],
+  "completed": true,
+  "tokenizer_directory_relative_to_repo": "assignments/a1-basics/cs336_basics/bpe_corpus_runs/20261101_190151_430986",
+  "arrays_directory_relative_to_repo": "assignments/a1-basics/data/tokenized_tinystories_full/20261101_192402_611757",
+  "verification": {
+    "encoding_and_chunk_equivalence_checks": 49,
+    "tiny_case_count": 7,
+    "npy_array_equal_to_original_tokenizer": true,
+    "exact_crlf_unicode_whitespace_eos_roundtrip": true,
+    "temporary_files_cleaned_after_verified_commit": true
+  },
+  "official_tokenizer_tests": {
+    "passed": 23,
+    "skipped": 2,
+    "seconds": 4.878,
+    "implementation_under_test": "CachedTokenizer via temporary in-memory tests.adapters factory override; on-disk adapters unchanged"
+  },
+  "get_batch_checks": {
+    "valid": {
+      "input_shape": [
+        2,
+        16
+      ],
+      "target_shape": [
+        2,
+        16
+      ],
+      "dtype": "torch.int64",
+      "next_token_shift_correct": true
+    },
+    "train": {
+      "input_shape": [
+        2,
+        16
+      ],
+      "target_shape": [
+        2,
+        16
+      ],
+      "dtype": "torch.int64",
+      "next_token_shift_correct": true
+    }
+  }
+}

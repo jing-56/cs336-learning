@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "completed_steps": 20000,
+  "total_steps": 20000,
+  "processed_tokens": 40960000,
+  "elapsed_seconds": 1509.9472640999993,
+  "best_val_loss": 2.020974898338318,
+  "checkpoint": "checkpoint_step_020000.pt",
+  "checkpoint_uploaded": false,
+  "checkpoint_sha256": "3bc650d46134f28bcd33b3e872d177cea74a40376e2a23b90fee5303712ac124",
+  "validation_scope": "10 fixed validation batches, batch_size=8, context_length=256; not entire validation corpus",
+  "resume_201_to_20000_active_seconds": 1462.965614100005,
+  "timing_scope": "cumulative active training/evaluation; excludes startup, pauses and some checkpoint IO; first 100 steps CPU",
+  "parameter_count": 3413120,
+  "formal_course_architecture": false,
+  "final_validation_loss": 2.020974898338318
+}

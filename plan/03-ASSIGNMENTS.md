@@ -11,22 +11,24 @@
 
 **目标**：手写 BPE tokenizer → Transformer → AdamW → 训练循环 → 跑实验。
 **交付**：`code.zip` + `writeup.pdf`（含实验图）。
-**算力**：CPU 能完成全部代码与测试；正式实验需 B200（配额约 17 B200·h）。
+**算力**：CPU 可完成主要代码和测试；常规实验采用 B200，讲义也给出了 CPU/MPS 约 4000 万 token 的低资源路径。Linux 内存测试需相应环境。
 
-### 实际进度（2026-10-27）
+### 实际进度（2026-11-01）
+
+本地 handout Version 26.0.3 逐项核对见 **[A1 交付清单](../notes/2026-10-30-A1-COMPLETION-AUDIT.md)**。
 
 | 部分 | 状态与证据 |
 | --- | --- |
-| BPE / Tokenizer / 数据采样 | 核心功能已有分项通过；任意切块边界、Linux 内存限制和完整语料实验未完成 |
-| 模型组件到完整 LM | 对应前向测试通过，支持 RoPE 与较短输入 |
-| 交叉熵、AdamW、调度、裁剪、checkpoint | 对应单元测试通过；checkpoint 曾因加载适配器未接入失败，修复后通过 |
-| 单批次训练 | CPU 100 步，loss 9.2533 → 0.0124，固定批次准确率 100% |
-| 训练与生成闭环 | 已有随机批次、固定验证、调度、分段存档恢复和温度/top-p 生成；5 MB 样本训练 1000 步，用户运行验证 loss 3.6202；CLI、完整 RNG 恢复与正式训练目标待补 |
-| 分析与正式实验 | 样本规模 RoPE 三种子对照和七候选学习率扫描完成；0.003 当前最好。batch、其余三种结构对照、数值发散边界、资源核算、全语料和 writeup 待完成 |
+| 核心实现与接口 | 2026-11-01 GPU 版 PyTorch 安装后全套 48 项，46 passed、2 skipped，17.06 秒；Linux 专属内存测试未验证，BPE 速度测试通过 |
+| 训练/生成闭环 | 新增配置/CLI、周期存档、逐点耗时日志；CPU 连续4步与2+2续训逐位一致；生成接口固定种子复现并保存256新token样例。见工具说明 |
+| 超参数与结构对照 | RoPE 三种子、七候选 LR、B=2/4/8、去 RMSNorm、post-norm、配平 SiLU 已有小配置曲线；不代表正式范围和预算已全部覆盖 |
+| 资源核算 | Transformer a–e 与 AdamW a–d 有说明和脚本；激活采用明确的简化输出记账，仍须在 writeup 校核并保留口径限制 |
+| 数据与正式目标 | 完整 TinyStories train/valid 已下载并通过 SHA-256；完整训练集 10k BPE 已完成并核验，完整训练/验证集已编码为 uint16 并通过全量还原和写盘检查；OWT 尚待完成；旧实验每组 25.6 万 token；学习模型已累计完成 4,096 万目标 token（20,000 步，CPU 起步后 GPU 续训），固定批次验证 loss=2.0210；模型小于课程原始配置，正式实验尚未全部覆盖 |
+| 书面与最终交付 | Unicode/SGD 已有逐题回答与十步实验；完整分词实验、发散分析、OWT 及最终 writeup.pdf/code.zip 仍待补；已有规范长度的样本模型生成记录 |
 
-详细变更与测试范围见 [10 月 26 日](../notes/2026-10-26-A1-TRANSFORMER-AND-LOSS.md)、[10 月 27 日早期训练组件](../notes/2026-10-27-A1-TRAINING-AND-CHECKPOINT.md)及[晚间训练与实验](../notes/2026-10-27-A1-TRAINING-GENERATION-AND-EXPERIMENTS.md)。[源码归档](../implementations/a1-basics/README.md)保存累计实现；上游测试、数据和 checkpoint 未上传。
+训练/生成工具及逐点日志已完成短运行验证，Identity 已替换为自写 PassThrough，旧存档重算结果一致。[使用说明](../notes/2026-10-30-A1-TRAINING-TOOLS.md)。[Unicode/SGD 小题](../notes/2026-11-01-A1-UNICODE-AND-SGD.md)已完成，[完整 TinyStories 已下载校验](../notes/2026-11-01-A1-FULL-TINYSTORIES-PREPARATION.md)，[完整训练集 10k BPE 已完成](../notes/2026-11-01-A1-TINYSTORIES-FULL-BPE.md)，[完整编码已完成](../notes/2026-11-01-A1-TINYSTORIES-FULL-ENCODING.md)，[新数据 CPU 起步](../notes/2026-11-01-A1-FULL-DATA-TRAINING-START.md)后已[切 GPU](../notes/2026-11-01-A1-GPU-TRAINING.md)，并[完成 20,000 步训练和 EOS 故事生成](../notes/2026-11-01-A1-FULL-TRAINING-AND-GENERATION.md)，下一步补正式实验和书面交付；任意切块等价仍是额外质量范围，不误标为已失败的官方测试。
 
-当前下一步：batch size 对比先明确固定处理 token 预算或固定更新步数；后做移除 RMSNorm、post-norm、SwiGLU→SiLU。正式生成题至少 256 token（或至 EOS）、完整数据与推导题仍需补齐。本地讲义 CPU/MPS 建议约处理 4000 万 token，本次每组仅 25.6 万；样本数值不与正式目标直接比较。
+详细记录集中在[笔记索引](../notes/INDEX.md)。[源码归档](../implementations/a1-basics/README.md)已同步 56 个活动模块、接入函数及三个配置，包含新增 18 个模块和 bpe.py 分块读取改动，上游辅助示例不计入。
 
 ### 要写的东西（按依赖顺序）
 
@@ -55,7 +57,7 @@
 | 21 | 生成文本样例 | — | 1 | 贴 256 token |
 | 22 | 4 个消融（去 RMSNorm / post-norm / NoPE / SiLU） | — | 1×4 | 各 0.5 B200·h，**最划算的分数** |
 | 23 | OWT 主实验 | — | 2 | 2 B200·h，同一模型换数据集 |
-| 24 | leaderboard | — | 6 | 10 B200·h，可选，投入产出比最低 |
+| 24 | leaderboard | — | 6 | 10 B200·h，自学可后置；讲义列为计分题 |
 
 ### 自检
 

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="1000" height="490" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 490" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1000" height="490"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-490)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="1000" height="490" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="55" y="455" style="font-family: Helvetica; font-size: 21px;fill: rgb(14%,20%,26%); stroke:none;" transform="translate(0,910) scale(1,-1)">SwiGLU vs. SiLU: matching the parameter budget</text>
+			<text x="55" y="428" style="font-family: Helvetica; font-size: 12px;fill: rgb(14%,20%,26%); stroke:none;" transform="translate(0,856) scale(1,-1)">SwiGLU width 128 | SiLU width 192 | 24,576 FFN weights per layer | 1,362,240 model weights</text>
+			<text x="55" y="403" style="font-family: Helvetica; font-size: 11px;fill: rgb(14%,20%,26%); stroke:none;" transform="translate(0,806) scale(1,-1)">Same non-FFN initialization and training batches; validation loss from update 100</text>
+			<path d="M 75,141.333333 L 915,141.333333 Z" style="stroke: rgb(86%,88%,90%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<path d="M 75,182.166667 L 915,182.166667 Z" style="stroke: rgb(86%,88%,90%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<path d="M 75,223 L 915,223 Z" style="stroke: rgb(86%,88%,90%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<path d="M 75,263.833333 L 915,263.833333 Z" style="stroke: rgb(86%,88%,90%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<path d="M 75,304.666667 L 915,304.666667 Z" style="stroke: rgb(86%,88%,90%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<path d="M 75,345.5 L 915,345.5 Z" style="stroke: rgb(86%,88%,90%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<path d="M 75,66 L 101,66 Z" style="stroke: rgb(9%,40%,64%); stroke-linecap: butt; stroke-width: 2.7;"/>
+			<text x="110" y="62" style="font-family: Helvetica; font-size: 12px;fill: rgb(14%,20%,26%); stroke:none;" transform="translate(0,124) scale(1,-1)">swiglu: final 3.6541</text>
+			<path d="M 505,66 L 531,66 Z" style="stroke: rgb(74%,39%,8%); stroke-linecap: butt; stroke-width: 2.7;"/>
+			<text x="540" y="62" style="font-family: Helvetica; font-size: 12px;fill: rgb(14%,20%,26%); stroke:none;" transform="translate(0,124) scale(1,-1)">silu: final 3.7150</text>
+			<g transform="">
+				<g transform="">
+					<g transform="">
+						<path d="M 75,125 L 915,125 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<path d="M 75,125 L 75,120 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 261.666667,125 L 261.666667,120 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 448.333333,125 L 448.333333,120 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 635,125 L 635,120 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 821.666667,125 L 821.666667,120 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 915,125 L 915,120 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,75,120)">
+							<text x="-9.174" y="-11.0" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-22) scale(1,-1)">100</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,261.666667,120)">
+							<text x="-9.174" y="-11.0" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-22) scale(1,-1)">300</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,448.333333,120)">
+							<text x="-9.174" y="-11.0" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-22) scale(1,-1)">500</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,635,120)">
+							<text x="-9.174" y="-11.0" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-22) scale(1,-1)">700</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,821.666667,120)">
+							<text x="-9.174" y="-11.0" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-22) scale(1,-1)">900</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,915,120)">
+							<text x="-12.232000000000001" y="-11.0" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-22) scale(1,-1)">1000</text>
+						</g>
+					</g>
+				</g>
+				<g transform="">
+					<g transform="">
+						<path d="M 75,125 L 75,370 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<path d="M 75,141.333333 L 70,141.333333 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 75,182.166667 L 70,182.166667 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 75,223 L 70,223 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 75,263.833333 L 70,263.833333 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 75,304.666667 L 70,304.666667 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 75,345.5 L 70,345.5 Z" style="stroke: rgb(40%,46%,51%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,70,141.333333)">
+							<text x="-15.290000000000001" y="-4.4" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">3.5</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,70,182.166667)">
+							<text x="-15.290000000000001" y="-4.4" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">4.0</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,70,223)">
+							<text x="-15.290000000000001" y="-4.4" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">4.5</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,70,263.833333)">
+							<text x="-15.290000000000001" y="-4.4" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">5.0</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,70,304.666667)">
+							<text x="-15.290000000000001" y="-4.4" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">5.5</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,70,345.5)">
+							<text x="-15.290000000000001" y="-4.4" style="font-family: Helvetica; font-size: 11px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">6.0</text>
+						</g>
+					</g>
+				</g>
+				<g transform="">
+					<polyline points="75 303.3013, 168.3333 232.1087, 261.6667 202.4155, 355 186.6557, 448.3333 176.6898, 541.6667 166.8289, 635 160.8098, 728.3333 158.0295, 821.6667 155.6218, 915 153.9197" style="stroke: rgb(9%,40%,64%); stroke-linecap: round; stroke-width: 2.7; fill: None; fill-rule: evenodd;"/>
+					<polyline points="75 306.1085, 168.3333 234.0994, 261.6667 204.4873, 355 191.9825, 448.3333 180.9145, 541.6667 172.1975, 635 165.6645, 728.3333 162.4412, 821.6667 160.4781, 915 158.888" style="stroke: rgb(74%,39%,8%); stroke-linecap: round; stroke-width: 2.7; fill: None; fill-rule: evenodd; stroke-dasharray: 6, 3;"/>
+				</g>
+			</g>
+			<text x="453.312" y="93" style="font-family: Helvetica; font-size: 12px;fill: rgb(14%,20%,26%); stroke:none;" transform="translate(0,186) scale(1,-1)">Training update</text>
+			<text x="55" y="17" style="font-family: Helvetica; font-size: 10px;fill: rgb(14%,20%,26%); stroke:none;" transform="translate(0,34) scale(1,-1)">One seed pair, one learning-rate setting, 256k target tokens. FFN weights differ in shape. Lower loss is better; no smoothing.</text>
+		</g>
+	</g>
+</svg>

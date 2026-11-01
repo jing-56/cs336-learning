@@ -1,0 +1,109 @@
+{
+  "source": {
+    "dataset": "roneneldan/TinyStories",
+    "revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+    "verified_at_utc": "2026-11-01T10:56:13.019614+00:00",
+    "source": "Assignment README's TinyStoriesV2-GPT4 train/valid text files",
+    "files": [
+      {
+        "filename": "TinyStoriesV2-GPT4-valid.txt",
+        "size": 22502601,
+        "sha256": "6874bae9a4c1a4e7edcf0e53b86c17817e9cf881fc75ff2368da457b80c0585d",
+        "sha256_verified": true
+      },
+      {
+        "filename": "TinyStoriesV2-GPT4-train.txt",
+        "size": 2227753162,
+        "sha256": "6418d412de72888f52b5142c761ac21a582f7d1166f0bfbdb5f03ccfdec90443",
+        "sha256_verified": true
+      }
+    ]
+  },
+  "dataset_inspection": [
+    {
+      "filename": "TinyStoriesV2-GPT4-valid.txt",
+      "size": 22502601,
+      "sha256": "6874bae9a4c1a4e7edcf0e53b86c17817e9cf881fc75ff2368da457b80c0585d",
+      "sha256_verified": true,
+      "eos_marker_occurrences": 27630,
+      "strict_utf8_valid": true,
+      "longest_piece_between_eos_bytes": 4168,
+      "trailing_bytes_after_last_eos": 594
+    },
+    {
+      "filename": "TinyStoriesV2-GPT4-train.txt",
+      "size": 2227753162,
+      "sha256": "6418d412de72888f52b5142c761ac21a582f7d1166f0bfbdb5f03ccfdec90443",
+      "sha256_verified": true,
+      "eos_marker_occurrences": 2717699,
+      "strict_utf8_valid": true,
+      "longest_piece_between_eos_bytes": 5499,
+      "trailing_bytes_after_last_eos": 558
+    }
+  ],
+  "validation_bpe_before_streaming_edit": {
+    "split_usage": "validation_debug_only",
+    "input_filename": "TinyStoriesV2-GPT4-valid.txt",
+    "input_bytes": 22502601,
+    "input_sha256": "6874bae9a4c1a4e7edcf0e53b86c17817e9cf881fc75ff2368da457b80c0585d",
+    "target_vocab_size": 10000,
+    "actual_vocab_size": 10000,
+    "merges": 9743,
+    "special_tokens": [
+      "<|endoftext|>"
+    ],
+    "training_seconds_without_profiler": 37.06522159999804,
+    "training_seconds_with_profiler": 75.9088273999987,
+    "process_rss_before_bytes": 27705344,
+    "process_rss_after_bytes": 41099264,
+    "windows_process_lifetime_peak_before_profiling_bytes": 100851712,
+    "longest_normal_token_hex": "206163636f6d706c6973686d656e74",
+    "longest_normal_token_repr": "b' accomplishment'",
+    "longest_normal_token_bytes": 15,
+    "roundtrip_example": "A robot opened the window and watched the stars. 你好！",
+    "roundtrip": true,
+    "profiled_and_unprofiled_vocab_merges_identical": true
+  },
+  "vocabulary_comparison": {
+    "same_vocab_size": true,
+    "different_id_entries": 9640,
+    "examples": [
+      {
+        "id": 257,
+        "old_repr": "b'he'",
+        "validation_debug_repr": "b' t'"
+      },
+      {
+        "id": 258,
+        "old_repr": "b' t'",
+        "validation_debug_repr": "b'he'"
+      },
+      {
+        "id": 262,
+        "old_repr": "b'nd'",
+        "validation_debug_repr": "b' the'"
+      },
+      {
+        "id": 263,
+        "old_repr": "b' the'",
+        "validation_debug_repr": "b'nd'"
+      }
+    ]
+  },
+  "streaming_verification": {
+    "frequency_table_equality_checks": 51,
+    "tiny_corpus_edge_cases": 7,
+    "complete_validation_chunk_sizes_checked": [
+      65536,
+      1048576
+    ],
+    "complete_validation_vocab_and_merges_equal_to_before_edit": true,
+    "notes": "Counter equality includes UTF-8, CRLF, whitespace, split markers, self-overlapping marker, multiple markers, absent marker, empty input."
+  },
+  "official_bpe_tests": {
+    "passed": 3,
+    "failures": 0,
+    "seconds": 4.835
+  },
+  "full_training_corpus_bpe_completed": false
+}

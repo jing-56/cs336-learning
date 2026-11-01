@@ -61,11 +61,43 @@ def pretokenize_counts(text, special_tokens):
     return counts
 
 
+def pretokenize_file_counts(input_path, special_tokens, chunk_chars=1024 * 1024):
+    """Stream one-marker corpora, preserving complete pre-token boundaries.
+
+    The unprocessed tail can grow to the longest document. The global Counter
+    still grows with the number of distinct pre-tokens; this is not constant
+    total memory. Other special-token configurations retain the original path.
+    """
+    if chunk_chars <= 0:
+        raise ValueError("chunk_chars must be positive")
+    if len(special_tokens) != 1 or not special_tokens[0]:
+        text = Path(input_path).read_text(encoding="utf-8")
+        return pretokenize_counts(text, special_tokens)
+
+    marker = special_tokens[0]
+    marker_pattern = regex.compile(regex.escape(marker))
+    counts = Counter()
+    pending = ""
+    # TextIO keeps UTF-8 characters intact and normalizes newlines just like
+    # the original Path.read_text() call.
+    with Path(input_path).open("r", encoding="utf-8") as stream:
+        while chunk := stream.read(chunk_chars):
+            pending += chunk
+            boundary = 0
+            for match in marker_pattern.finditer(pending):
+                boundary = match.end()
+            if not boundary:
+                continue
+            counts.update(pretokenize_counts(pending[:boundary], special_tokens))
+            pending = pending[boundary:]
+    counts.update(pretokenize_counts(pending, special_tokens))
+    return counts
+
+
 # 调用函数，取得频率表
 def train_bpe(input_path, vocab_size, special_tokens):
     # 读取文本，统计预分词片段
-    text = Path(input_path).read_text(encoding="utf-8")
-    counts = pretokenize_counts(text, special_tokens)
+    counts = pretokenize_file_counts(input_path, special_tokens)
 
     # 转换为字节 token 序列
     byte_counts = {}

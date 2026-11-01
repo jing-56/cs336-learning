@@ -1,0 +1,31 @@
+{
+  "continuous_equals_resumed": true,
+  "matching_fields": [
+    "model",
+    "optimizer",
+    "rng",
+    "data_hashes",
+    "iteration",
+    "best_val_loss"
+  ],
+  "logs_equal_except_elapsed": true,
+  "elapsed_monotonic": true,
+  "processed_tokens": 1024,
+  "sampling_repeatable": true,
+  "sampling_preserves_global_rng_and_training_mode": true,
+  "eos_zero_length_long_prompt_and_invalid_inputs_checked": true,
+  "entrypoints": {
+    "metadata_checkpoint_decoding": true,
+    "legacy_256_token_repeat_identical": true,
+    "json_config_and_cli_override": true,
+    "incompatible_resume_rejected_without_log_mutation": true,
+    "sample_generated_tokens": 256,
+    "sample_stop_reason": "max_new_tokens"
+  },
+  "cpu_threads": 4,
+  "core_a1_suite_rerun": false,
+  "existing_norm_checkpoints_reloaded_and_losses_matched": true,
+  "default_pilot_steps": 100,
+  "default_pilot_val_loss": 5.483281135559082,
+  "default_pilot_matches_previous_baseline_step100": true
+}

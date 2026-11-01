@@ -48,15 +48,14 @@ E:\CS336\
 
 ---
 
-## 当前进度（2026-10-27）
+## 当前进度（2026-11-01）
 
-- 完整 Transformer 与训练支持组件已通过对应测试；单批次拟合之后，已接入随机批次、固定验证、学习率调度、存档恢复及温度/top-p 生成。
-- 5 MB 样本划分为 1,143,921 / 127,340 个训练/验证 token；CPU 小模型 1000 步的用户运行验证 loss 为 **3.6202**，能生成局部通顺但连贯性不足的故事。
-- RoPE 三种子配对实验：三个种子均有收益，平均验证 loss 差值 **+0.1729**，样本标准差 **0.0308**。
-- 学习率扫描七个候选：当前模型、预算和种子下 **0.003** 最好，验证 loss **3.6541**；大值出现明显波动，尚未定位数值发散边界。
-- [今日晚间逐文件记录、曲线与样例](notes/2026-10-27-A1-TRAINING-GENERATION-AND-EXPERIMENTS.md) · [实验 CSV/配置](notes/experiments/2026-10-27/README.md) · [较早的训练组件记录](notes/2026-10-27-A1-TRAINING-AND-CHECKPOINT.md)。
-- [本人实现源码](implementations/a1-basics/README.md)累计保存 38 个活动模块；不含数据、模型存档和上游测试。
-- 下一步：batch size 对比、剩余三个结构实验、资源核算，以及完整数据与分词器实验、正式 writeup；当前样本实验不表示 A1 已全部完成。
+- 2026-11-01 GPU 版 PyTorch 安装后本地核验：**46 passed、2 skipped，17.06 秒**；两项跳过均为 Linux 专属内存限制测试。测试通过不代替完整数据实验。
+- 已跑通 BPE/Tokenizer、完整 Transformer、训练与生成闭环；5 MB 样本的训练/验证数组为 1,143,921 / 127,340 token，主要单组对照预算为 25.6 万目标 token。
+- 学习率七候选、RoPE 三种子、B=2/4/8、去 RMSNorm、post-norm、参数量配平的 SiLU 对照均已有记录。当前小配置里 pre-norm/SwiGLU 基线验证 loss 为 3.6541；结论限于对应设置。
+- 参数量、前向 FLOPs、XL 正式配置和 AdamW 时间核算已有脚本与推导；激活内存采用明确的简化记账口径，不是实测峰值。
+- **[A1 逐项交付核对与下一步](notes/2026-10-30-A1-COMPLETION-AUDIT.md)**：TinyStories 完整 BPE/编码已完成；完整训练集 profile、OWT/跨域分词、课程原始尺寸训练与正式实验、发散边界及 writeup/code 打包仍待补；生成样例与逐点日志见下方工具记录。
+- [训练/生成入口与操作说明](notes/2026-10-30-A1-TRAINING-TOOLS.md)已新增：配置、周期存档、累计耗时日志、CPU 精确续训检查及固定种子 256-token 样例。[Unicode/SGD 逐题回答及十步实验](notes/2026-11-01-A1-UNICODE-AND-SGD.md)已补齐，[完整 TinyStories 数据已下载校验，BPE 已支持按文档边界分块读取](notes/2026-11-01-A1-FULL-TINYSTORIES-PREPARATION.md)；[完整训练集 10k BPE 已完成](notes/2026-11-01-A1-TINYSTORIES-FULL-BPE.md)，[完整训练/验证编码已完成](notes/2026-11-01-A1-TINYSTORIES-FULL-ENCODING.md)，[新数据 CPU 起步训练](notes/2026-11-01-A1-FULL-DATA-TRAINING-START.md)后已[切到 RTX 3050](notes/2026-11-01-A1-GPU-TRAINING.md)，并[完成 20,000 步、4,096 万目标 token 的学习模型训练与 EOS 故事生成](notes/2026-11-01-A1-FULL-TRAINING-AND-GENERATION.md)；最终固定批次验证 loss=2.0210，模型尺寸小于课程原始配置。[本人源码快照](implementations/a1-basics/README.md)已同步 56 个活动模块、接入函数及三个配置，数据和模型存档不上传。
 
 完整导航见 [笔记索引](notes/INDEX.md)与[作业进度](plan/03-ASSIGNMENTS.md)。
 

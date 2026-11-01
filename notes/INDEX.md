@@ -51,13 +51,25 @@
 | 2026-10-26 | [完整 Transformer 与交叉熵](2026-10-26-A1-TRANSFORMER-AND-LOSS.md) | 正式多头、RoPE、Block、LM、稳定交叉熵和梯度演示 |
 | 2026-10-27 | [训练组件与首次拟合](2026-10-27-A1-TRAINING-AND-CHECKPOINT.md) | AdamW、调度、裁剪、checkpoint、CPU 单批次 100 步实验 |
 | 2026-10-27（续） | [训练、生成与对照实验](2026-10-27-A1-TRAINING-GENERATION-AND-EXPERIMENTS.md) | 随机批次与验证、5 MB 小模型、top-p、RoPE 三种子、学习率扫描 |
+| 2026-10-29 | [批次大小](2026-10-29-A1-BATCH-SIZE.md)、[移除 RMSNorm](2026-10-29-A1-RMSNORM-ABLATION.md)、[pre/post-norm](2026-10-29-A1-PRE-POST-NORM.md)、[SwiGLU/SiLU](2026-10-29-A1-SWIGLU-SILU.md) | 固定预算对照与四类结构实验的后续记录 |
+| 2026-10-29（续） | [参数量](2026-10-29-A1-PARAMETER-COUNT.md)、[前向 FLOPs](2026-10-29-A1-FORWARD-FLOPS.md)、[训练内存](2026-10-29-A1-TRAINING-MEMORY.md)、[正式配置核算](2026-10-29-A1-TRANSFORMER-ACCOUNTING.md) | 从当前小模型到 XL 配置的资源计算 |
+| 2026-10-30 | [AdamW 激活与 batch](2026-10-30-A1-ADAMW-MEMORY-ACCOUNTING.md)、[更新计算量与时间](2026-10-30-A1-ADAMW-COMPUTE-AND-TIME.md) | 带明确假设的内存/运算与 MFU 估算 |
+| 2026-10-30（续） | [A1 完成度核对](2026-10-30-A1-COMPLETION-AUDIT.md) | 46 通过、2 跳过；逐项缺口和执行顺序 |
+| 2026-10-30（再续） | [统一训练/生成工具与 PyCharm 使用](2026-10-30-A1-TRAINING-TOOLS.md) | 可配置入口、累计耗时、可复现续训、256-token 样例 |
+| 2026-11-01 | [Unicode 与 SGD 学习率](2026-11-01-A1-UNICODE-AND-SGD.md) | 逐题回答、四组十步实验、闭式核验与适用范围 |
+| 2026-11-01（续） | [完整 TinyStories 数据与 BPE 分块读取](2026-11-01-A1-FULL-TINYSTORIES-PREPARATION.md) | 完整数据校验、验证集 10k 调试、读取等价检查、3 项 BPE 测试 |
+| 2026-11-01（再续） | [完整训练集 10k BPE](2026-11-01-A1-TINYSTORIES-FULL-BPE.md) | 单次正常训练、实测时间/内存、词表/merges 与验证文档检查 |
+| 2026-11-01（编码） | [完整训练/验证 token 数组](2026-11-01-A1-TINYSTORIES-FULL-ENCODING.md) | 固定正式词表、片段缓存、uint16 数组、全量还原和写盘验证 |
+| 2026-11-01（训练） | [新数据训练起步与 PyCharm 续训](2026-11-01-A1-FULL-DATA-TRAINING-START.md) | CPU 速度基准、40M 计划、实际完成 100 步，验证 loss 9.2332→6.0035 |
+| 2026-11-01（完成训练） | [20,000 步训练与故事生成](2026-11-01-A1-FULL-TRAINING-AND-GENERATION.md) | 4,096 万目标 token、验证 loss=2.0210、200 新 token 后 EOS、56 个模块归档 |
+| 2026-11-01（GPU） | [GPU 环境、设备迁移与续训](2026-11-01-A1-GPU-TRAINING.md) | RTX 3050 实测、CPU100→GPU200、约 4.3 倍提速、全套 46 passed/2 skipped |
 
 另见：[BPE 5 MB 样本实验摘要](A1-BPE-SAMPLE-EXPERIMENT.md)。
 
-截至 2026-10-27：
+截至 2026-11-01：
 
-- 分项通过范围保持原记录；已有随机批次训练、固定验证、调度、存档恢复及温度/top-p 生成链路。
-- 5 MB 样本完成 1000 步小模型训练；RoPE 三种子配对方向一致，学习率七候选中 0.003 在当前设置下最好。
-- [38 个活动源码模块与哈希](../implementations/a1-basics/README.md)、[实验结果与来源清单](experiments/2026-10-27/README.md)已保存；数据、模型存档和上游测试不上传。
-- 下一步：batch size、其余三个结构实验、资源核算、完整语料实验和 writeup。尚未定位学习率数值发散边界，也没有完成正式低资源训练目标。
-- 任意切块编码边界与 Linux 内存约束仍未完成验证；上述进度不据此修改课程讲次勾选。
+- 2026-11-01 更换 GPU 版 PyTorch 后完整收集 48 项，46 项通过、两项 Linux 内存测试跳过，17.06 秒；见[本次 GPU 切换记录](2026-11-01-A1-GPU-TRAINING.md)。
+- 四类结构消融和 batch 对比已有小配置曲线，资源核算已有带假设的说明。已有教学实验不能替代全语料和正式训练预算。
+- Unicode/SGD 逐题回答和十步实测已补齐；尚缺完整训练集 profile、OWT 分词与跨域实验、课程原始尺寸及正式实验范围、发散边界、最终 writeup/code 打包；现已补固定种子 256-token 样例与逐点耗时日志。
+- 训练/生成工具已完成短运行验证，完整 TinyStories 数据已校验，分块读取已验证；完整训练集 10k BPE 已完成；完整 TinyStories 编码已完成，新模型已从 CPU100 步迁移至 GPU，[完成 20,000 步、4,096 万目标 token 及故事生成](2026-11-01-A1-FULL-TRAINING-AND-GENERATION.md)，最终固定批次验证 loss=2.0210，下一步补剩余实验，再按[交付清单](2026-10-30-A1-COMPLETION-AUDIT.md)补齐。未完成 Linux 内存验证，不额外把任意切块等价升级为讲义未明确要求的必交项。
+- [源码快照](../implementations/a1-basics/README.md)现保存 56 个活动模块、最小包标识、接入函数和三个训练配置，含新增 18 个模块及 bpe.py 分块读取改动；数据、模型存档和上游测试不上传。课程讲次状态不依据代码进度自动勾选。

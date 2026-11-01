@@ -1,0 +1,64 @@
+{
+  "problem": "adamw_accounting (c)-(d)",
+  "paper_operations_per_parameter": {
+    "weight_decay": 2,
+    "first_moment": 3,
+    "second_moment": 4,
+    "parameter_update": 5
+  },
+  "local_operations_per_parameter": {
+    "first_moment": 3,
+    "second_moment": 4,
+    "bias_correction": 2,
+    "weight_decay": 1,
+    "parameter_update": 5
+  },
+  "assumptions": [
+    "Count each arithmetic op, square root and division as one; scalar coefficients precomputed",
+    "Steady-state AdamW update only; no backward, clipping, initialization, memory traffic, or latency model",
+    "Handout peak 495 TFLOP/s in its specified TF32 convention; MFU fixed at 50%",
+    "Backward matmul FLOPs assumed to equal twice forward matmul FLOPs",
+    "Time = model FLOPs/(peak*MFU); optimizer operations not separately added to MFU time",
+    "Batch 1024 is effective batch; not a feasible single-device physical batch claim"
+  ],
+  "rounded_xl": {
+    "d_ff": "4288",
+    "parameters": 1640452800,
+    "forward_matmul_flops_per_sequence": 3516769894400,
+    "paper_adamw_flops_per_step": 22966339200,
+    "local_adamw_flops_per_step": 24606792000,
+    "effective_batch_size": 1024,
+    "sequence_length": 1024,
+    "optimizer_steps": 400000,
+    "processed_target_tokens": 419430400000,
+    "model_training_flops_per_step": 10803517115596800,
+    "model_training_flops_total": 4321406846238720000000,
+    "handout_peak_flops_per_second": 495000000000000,
+    "assumed_mfu": 0.5,
+    "assumed_model_flops_per_second": 247500000000000.0,
+    "seconds_per_step": 43.650574204431514,
+    "training_seconds": 17460229.681772605,
+    "training_hours": 4850.06380049239,
+    "training_days": 202.08599168718294
+  },
+  "continuous_ffn": {
+    "d_ff": "12800/3",
+    "parameters": 1635537600,
+    "forward_matmul_flops_per_sequence": 3506703564800,
+    "paper_adamw_flops_per_step": 22897526400,
+    "local_adamw_flops_per_step": 24533064000,
+    "effective_batch_size": 1024,
+    "sequence_length": 1024,
+    "optimizer_steps": 400000,
+    "processed_target_tokens": 419430400000,
+    "model_training_flops_per_step": 10772593351065600,
+    "model_training_flops_total": 4309037340426240000000,
+    "handout_peak_flops_per_second": 495000000000000,
+    "assumed_mfu": 0.5,
+    "assumed_model_flops_per_second": 247500000000000.0,
+    "seconds_per_step": 43.52562970127515,
+    "training_seconds": 17410251.880510062,
+    "training_hours": 4836.181077919461,
+    "training_days": 201.50754491331088
+  }
+}

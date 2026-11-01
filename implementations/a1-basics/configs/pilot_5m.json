@@ -1,0 +1,22 @@
+{
+  "vocab_size": 10000,
+  "context_length": 64,
+  "d_model": 64,
+  "num_layers": 2,
+  "num_heads": 4,
+  "d_ff": 128,
+  "rope_theta": 10000.0,
+  "batch_size": 4,
+  "steps": 1000,
+  "warmup_steps": 50,
+  "max_lr": 0.003,
+  "min_lr": 0.0003,
+  "eval_every": 20,
+  "eval_batches": 10,
+  "eval_batch_size": 4,
+  "save_every": 100,
+  "seed": 42,
+  "val_seed": 12345,
+  "threads": 4,
+  "device": "cpu"
+}

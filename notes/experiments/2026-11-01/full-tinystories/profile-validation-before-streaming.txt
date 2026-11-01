@@ -1,0 +1,23 @@
+         109084017 function calls (109084016 primitive calls) in 75.897 seconds
+
+   Ordered by: cumulative time
+   List reduced from 71 to 15 due to restriction <15>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    1.500    1.500   75.896   75.896 bpe.py:65(train_bpe)
+     9743   32.587    0.003   60.159    0.006 {built-in method builtins.max}
+ 99657168   27.572    0.000   27.572    0.000 bpe.py:112(<lambda>)
+        1    9.479    9.479   12.017   12.017 bpe.py:42(pretokenize_counts)
+  5419001    1.538    0.000    1.538    0.000 {method 'group' of '_regex.Match' objects}
+    27631    0.061    0.000    0.934    0.000 _main.py:350(finditer)
+   206300    0.387    0.000    0.931    0.000 __init__.py:595(__init__)
+    68766    0.562    0.000    0.927    0.000 bpe.py:17(merge_pair)
+    27632    0.222    0.000    0.766    0.000 _main.py:459(_compile)
+   206300    0.149    0.000    0.544    0.000 __init__.py:669(update)
+    55264    0.159    0.000    0.429    0.000 enum.py:1561(__and__)
+   441488    0.179    0.000    0.324    0.000 {built-in method builtins.isinstance}
+   165792    0.114    0.000    0.187    0.000 enum.py:1543(_get_value)
+   137532    0.151    0.000    0.151    0.000 {built-in method _collections._count_elements}
+   137532    0.072    0.000    0.145    0.000 <frozen abc>:117(__instancecheck__)
+
+

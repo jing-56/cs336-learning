@@ -1,0 +1,66 @@
+{
+  "scope": "adamw_accounting (a)-(b), explicit simplified activation-output bookkeeping",
+  "activation_formula_bytes": "4*B*T*(L*(8*d+4*f+2*H*T)+d+2*V)",
+  "memory_formula_bytes": "16*P + activation_formula_bytes",
+  "assumptions": [
+    "FP32 throughout; 80 GB means 80*10^9 bytes",
+    "Parameters, gradients, and m/v simultaneously present",
+    "One output per listed main operator, plus one BT*V CE intermediate",
+    "No checkpointing, mixed precision, FlashAttention, recomputation, or state sharding",
+    "Not an autograd lifetime analysis or measured device memory; ignores aliases, extra operator internals, runtime, workspaces and buffers"
+  ],
+  "rounded_xl": {
+    "vocab_size": 50257,
+    "context_length": 1024,
+    "num_layers": 48,
+    "d_model": 1600,
+    "num_heads": 25,
+    "d_ff": "4288",
+    "parameters": 1640452800,
+    "activation_bytes_per_sequence": {
+      "block_norm_outputs": 629145600,
+      "qkv_outputs": 943718400,
+      "attention_scores_and_softmax": 10066329600,
+      "attention_value_and_output": 629145600,
+      "swiglu_outputs": 3686793216,
+      "final_norm": 6553600,
+      "logits_and_ce_intermediate": 411705344
+    },
+    "activation_total_bytes_per_sequence": 16373391360,
+    "parameter_bytes": 6561811200,
+    "gradient_bytes": 6561811200,
+    "optimizer_state_bytes": 13123622400,
+    "fixed_state_bytes": 26247244800,
+    "capacity_bytes": 80000000000,
+    "max_batch_size": 3,
+    "batch3_bytes": 75367418880,
+    "batch4_bytes": 91740810240
+  },
+  "formal_continuous_ffn": {
+    "vocab_size": 50257,
+    "context_length": 1024,
+    "num_layers": 48,
+    "d_model": 1600,
+    "num_heads": 25,
+    "d_ff": "12800/3",
+    "parameters": 1635537600,
+    "activation_bytes_per_sequence": {
+      "block_norm_outputs": 629145600,
+      "qkv_outputs": 943718400,
+      "attention_scores_and_softmax": 10066329600,
+      "attention_value_and_output": 629145600,
+      "swiglu_outputs": 3670016000,
+      "final_norm": 6553600,
+      "logits_and_ce_intermediate": 411705344
+    },
+    "activation_total_bytes_per_sequence": 16356614144,
+    "parameter_bytes": 6542150400,
+    "gradient_bytes": 6542150400,
+    "optimizer_state_bytes": 13084300800,
+    "fixed_state_bytes": 26168601600,
+    "capacity_bytes": 80000000000,
+    "max_batch_size": 3,
+    "batch3_bytes": 75238444032,
+    "batch4_bytes": 91595058176
+  }
+}

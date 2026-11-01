@@ -1,0 +1,367 @@
+{
+  "audit_date": "2026-10-30",
+  "handout_version": "26.0.3",
+  "test_report": {
+    "collected": 48,
+    "passed": 46,
+    "skipped": [
+      "test_encode_iterable_memory_usage",
+      "test_encode_memory_usage"
+    ],
+    "failures": 0,
+    "timeout_seconds": 30,
+    "torch_cpu_threads": 4,
+    "platform": "Windows",
+    "pytest_reported_seconds": 18.39,
+    "bpe_speed_test_seconds": 0.629
+  },
+  "experiments": {
+    "lr_sweep_runs": {
+      "source": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_sweep_summary.json",
+      "results": [
+        {
+          "name": 0.001,
+          "completed_steps": 1000,
+          "final_val_loss": 4.098927140235901,
+          "reused": false,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss",
+            "event"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_0.001_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": 0.003,
+          "completed_steps": 1000,
+          "final_val_loss": 3.654118800163269,
+          "reused": true,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_0.003_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": 0.01,
+          "completed_steps": 1000,
+          "final_val_loss": 3.7276400089263917,
+          "reused": false,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss",
+            "event"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_0.01_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": 0.03,
+          "completed_steps": 1000,
+          "final_val_loss": 4.345074939727783,
+          "reused": false,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss",
+            "event"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_0.03_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": 0.1,
+          "completed_steps": 1000,
+          "final_val_loss": 5.152896356582642,
+          "reused": false,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss",
+            "event"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_0.1_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": 0.3,
+          "completed_steps": 1000,
+          "final_val_loss": 5.65691499710083,
+          "reused": false,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss",
+            "event"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_0.3_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": 1.0,
+          "completed_steps": 1000,
+          "final_val_loss": 5.773257923126221,
+          "reused": false,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss",
+            "event"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/lr_sweep_runs/20261027_232541_578924_seed42/lr_1_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        }
+      ]
+    },
+    "batch_size_runs": {
+      "source": "assignments/a1-basics/cs336_basics/batch_size_runs/20261029_111350_182184_seed42/batch_size_summary.json",
+      "results": [
+        {
+          "name": 2,
+          "completed_steps": 2000,
+          "final_val_loss": 3.5742260456085204,
+          "reused": false,
+          "columns": [
+            "step",
+            "processed_tokens",
+            "lr",
+            "train_loss",
+            "val_loss"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/batch_size_runs/20261029_111350_182184_seed42/batch_2_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": 4,
+          "completed_steps": 1000,
+          "final_val_loss": 3.654118800163269,
+          "reused": false,
+          "columns": [
+            "step",
+            "processed_tokens",
+            "lr",
+            "train_loss",
+            "val_loss"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/batch_size_runs/20261029_111350_182184_seed42/batch_4_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": 8,
+          "completed_steps": 500,
+          "final_val_loss": 3.864517879486084,
+          "reused": false,
+          "columns": [
+            "step",
+            "processed_tokens",
+            "lr",
+            "train_loss",
+            "val_loss"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/batch_size_runs/20261029_111350_182184_seed42/batch_8_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        }
+      ]
+    },
+    "norm_ablation_runs": {
+      "source": "assignments/a1-basics/cs336_basics/norm_ablation_runs/20261029_114740_004675_seed42/norm_ablation_summary.json",
+      "results": [
+        {
+          "name": "with_norm_lr_0.003",
+          "completed_steps": 1000,
+          "final_val_loss": 3.654118800163269,
+          "reused": true,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/norm_ablation_runs/20261029_114740_004675_seed42/with_norm_lr_0.003_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": "without_norm_lr_0.003",
+          "completed_steps": 1000,
+          "final_val_loss": 3.6586169242858886,
+          "reused": false,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss",
+            "event"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/norm_ablation_runs/20261029_114740_004675_seed42/without_norm_lr_0.003_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": "without_norm_lr_0.001",
+          "completed_steps": 1000,
+          "final_val_loss": 3.9840965032577516,
+          "reused": false,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss",
+            "event"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/norm_ablation_runs/20261029_114740_004675_seed42/without_norm_lr_0.001_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": "without_norm_lr_0.0003",
+          "completed_steps": 1000,
+          "final_val_loss": 4.579028224945068,
+          "reused": false,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss",
+            "event"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/norm_ablation_runs/20261029_114740_004675_seed42/without_norm_lr_0.0003_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        }
+      ]
+    },
+    "post_norm_runs": {
+      "source": "assignments/a1-basics/cs336_basics/post_norm_runs/20261029_115746_861642_seed42/post_norm_summary.json",
+      "results": [
+        {
+          "name": "pre_norm",
+          "completed_steps": 1000,
+          "final_val_loss": 3.654118800163269,
+          "reused": true,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/post_norm_runs/20261029_115746_861642_seed42/pre_norm_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": "post_norm",
+          "completed_steps": 1000,
+          "final_val_loss": 3.7210877895355225,
+          "reused": false,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss",
+            "event"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/post_norm_runs/20261029_115746_861642_seed42/post_norm_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        }
+      ]
+    },
+    "silu_ablation_runs": {
+      "source": "assignments/a1-basics/cs336_basics/silu_ablation_runs/20261029_121123_804504_seed42/silu_ablation_summary.json",
+      "results": [
+        {
+          "name": "swiglu",
+          "completed_steps": 1000,
+          "final_val_loss": 3.654118800163269,
+          "reused": true,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/silu_ablation_runs/20261029_121123_804504_seed42/swiglu_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        },
+        {
+          "name": "silu",
+          "completed_steps": 1000,
+          "final_val_loss": 3.714955043792725,
+          "reused": false,
+          "columns": [
+            "step",
+            "lr",
+            "train_loss",
+            "val_loss",
+            "event"
+          ],
+          "curve": "assignments/a1-basics/cs336_basics/silu_ablation_runs/20261029_121123_804504_seed42/silu_loss.csv",
+          "checkpoint_exists": true,
+          "per_point_wall_time": false
+        }
+      ]
+    }
+  },
+  "rope_multiseed": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "mean_paired_gap": 0.1729258537292481,
+    "all_six_curves_checked": true
+  },
+  "source_archive": {
+    "active_modules": 48,
+    "archived_modules": 38,
+    "new_modules": [
+      "adamw_compute_accounting.py",
+      "adamw_memory_accounting.py",
+      "count_flops.py",
+      "count_parameters.py",
+      "memory_accounting.py",
+      "train_batch_size.py",
+      "train_norm_ablation.py",
+      "train_post_norm.py",
+      "train_silu_ablation.py",
+      "transformer_accounting.py"
+    ],
+    "differing_existing_modules": [],
+    "excluded_upstream_modules": [
+      "pretokenization_example.py"
+    ]
+  },
+  "data_inventory_scope": "E:/CS336, excluding environments, caches and lectures",
+  "full_datasets_found": false,
+  "available_largest_text": "tests/fixtures/tinystories_sample_5M.txt",
+  "evidence_notes": [
+    "No language-model divergence observed in existing seven-rate sweep; no NaN required for divergence, but these completed finite curves do not establish an observed divergent run",
+    "Arbitrary-chunk equality is not an additional explicit handout deliverable; line-based iterable tests pass; Linux memory tests remain unverified",
+    "Generation script max_new_tokens=120; no persisted >=256-token-or-EOS evidence located",
+    "Resource memory worksheet is an explicit simplified output-bookkeeping estimate, not an exact measured peak"
+  ]
+}

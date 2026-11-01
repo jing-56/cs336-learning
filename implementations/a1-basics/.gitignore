@@ -8,3 +8,12 @@ __pycache__/
 data/
 rope_ablation_runs/
 lr_sweep_runs/
+
+# 新入口的运行产物
+training_runs/
+generation_runs/
+bpe_corpus_runs/
+*_ablation_runs/
+batch_size_runs/
+sgd_learning_rate_runs/
+.cuda_kernel_cache/
