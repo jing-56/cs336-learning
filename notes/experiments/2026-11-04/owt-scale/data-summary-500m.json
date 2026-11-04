@@ -1,0 +1,8 @@
+{
+  "url": "https://huggingface.co/datasets/stanford-cs336/owt-sample/resolve/488afad/owt_train.txt.gz",
+  "bytes": 524281008,
+  "documents": 105484,
+  "sha256": "ef6275afb8cdf026876447fdf329beaf5c520e320d05c6bba68af776ea35f415",
+  "matches_verified_50m_prefix": true,
+  "preparation_seconds": 1151.0467687000055
+}

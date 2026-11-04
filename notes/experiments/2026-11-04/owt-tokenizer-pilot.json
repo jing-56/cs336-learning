@@ -1,0 +1,230 @@
+{
+  "scope": "local prefix pilot, not full OWT BPE training",
+  "data": {
+    "owt_train": {
+      "url": "https://huggingface.co/datasets/stanford-cs336/owt-sample/resolve/488afad/owt_train.txt.gz",
+      "prefix_bytes": 5242880,
+      "complete_documents": 1093,
+      "prefix_sha256": "a302433edaaab26b415f309f4fd585df264adfa699c40b5f350d12143f2b4324"
+    },
+    "owt_valid": {
+      "url": "https://huggingface.co/datasets/stanford-cs336/owt-sample/resolve/488afad/owt_valid.txt.gz",
+      "prefix_bytes": 2097152,
+      "complete_documents": 423,
+      "prefix_sha256": "02926eaf380594b4743f6ddc63775d8314a6436212a7b8b1b3e99033cf00f3c3"
+    },
+    "seed": 42,
+    "sample_size_per_domain": 10,
+    "tinystories_population": 27630,
+    "owt_pilot_train_bytes": 5222928,
+    "owt_valid_sampling_scope": "complete documents in 2 MiB decoded prefix, excluding exact matches in pilot train"
+  },
+  "owt_training_seconds": 781.3074169999454,
+  "owt_vocabulary_size": 32000,
+  "results": [
+    {
+      "domain": "tinystories",
+      "tokenizer": "TinyStories full 10K",
+      "vocabulary_size": 10000,
+      "documents": 10,
+      "bytes": 8457,
+      "tokens": 2084,
+      "bytes_per_token": 4.0580614203454894,
+      "doc_bytes": [
+        687,
+        2666,
+        603,
+        448,
+        797,
+        565,
+        710,
+        814,
+        630,
+        537
+      ],
+      "doc_tokens": [
+        171,
+        668,
+        148,
+        101,
+        197,
+        128,
+        173,
+        210,
+        158,
+        130
+      ],
+      "exact_roundtrip": true
+    },
+    {
+      "domain": "tinystories",
+      "tokenizer": "OWT pilot 10K",
+      "vocabulary_size": 10000,
+      "documents": 10,
+      "bytes": 8457,
+      "tokens": 2331,
+      "bytes_per_token": 3.628056628056628,
+      "doc_bytes": [
+        687,
+        2666,
+        603,
+        448,
+        797,
+        565,
+        710,
+        814,
+        630,
+        537
+      ],
+      "doc_tokens": [
+        190,
+        774,
+        156,
+        120,
+        218,
+        135,
+        189,
+        226,
+        184,
+        139
+      ],
+      "exact_roundtrip": true
+    },
+    {
+      "domain": "tinystories",
+      "tokenizer": "OWT pilot 32K",
+      "vocabulary_size": 32000,
+      "documents": 10,
+      "bytes": 8457,
+      "tokens": 2146,
+      "bytes_per_token": 3.940820130475303,
+      "doc_bytes": [
+        687,
+        2666,
+        603,
+        448,
+        797,
+        565,
+        710,
+        814,
+        630,
+        537
+      ],
+      "doc_tokens": [
+        181,
+        690,
+        149,
+        107,
+        201,
+        130,
+        175,
+        213,
+        167,
+        133
+      ],
+      "exact_roundtrip": true
+    },
+    {
+      "domain": "owt",
+      "tokenizer": "TinyStories full 10K",
+      "vocabulary_size": 10000,
+      "documents": 10,
+      "bytes": 32294,
+      "tokens": 10134,
+      "bytes_per_token": 3.1866982435366094,
+      "doc_bytes": [
+        5638,
+        3192,
+        1092,
+        1742,
+        1571,
+        7104,
+        2396,
+        3395,
+        1422,
+        4742
+      ],
+      "doc_tokens": [
+        1896,
+        893,
+        314,
+        501,
+        493,
+        2525,
+        701,
+        928,
+        452,
+        1431
+      ],
+      "exact_roundtrip": true
+    },
+    {
+      "domain": "owt",
+      "tokenizer": "OWT pilot 10K",
+      "vocabulary_size": 10000,
+      "documents": 10,
+      "bytes": 32294,
+      "tokens": 8646,
+      "bytes_per_token": 3.735137635900995,
+      "doc_bytes": [
+        5638,
+        3192,
+        1092,
+        1742,
+        1571,
+        7104,
+        2396,
+        3395,
+        1422,
+        4742
+      ],
+      "doc_tokens": [
+        1620,
+        789,
+        248,
+        461,
+        390,
+        2222,
+        574,
+        829,
+        358,
+        1155
+      ],
+      "exact_roundtrip": true
+    },
+    {
+      "domain": "owt",
+      "tokenizer": "OWT pilot 32K",
+      "vocabulary_size": 32000,
+      "documents": 10,
+      "bytes": 32294,
+      "tokens": 7745,
+      "bytes_per_token": 4.169657843770175,
+      "doc_bytes": [
+        5638,
+        3192,
+        1092,
+        1742,
+        1571,
+        7104,
+        2396,
+        3395,
+        1422,
+        4742
+      ],
+      "doc_tokens": [
+        1463,
+        732,
+        224,
+        407,
+        336,
+        1951,
+        498,
+        763,
+        327,
+        1044
+      ],
+      "exact_roundtrip": true
+    }
+  ]
+}

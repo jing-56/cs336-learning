@@ -1,0 +1,13 @@
+{
+  "case": "50m",
+  "input_bytes": 52412505,
+  "input_sha256": "d9c0c8ce9466369682ba759cff0dcb437fa4125b93d418b370826110bb2506b7",
+  "vocabulary_size": 32000,
+  "merge_count": 31743,
+  "training_seconds": 63.87644620001083,
+  "windows_peak_working_set_bytes": 367435776,
+  "build_and_merge_seconds": 45.68237670004601,
+  "matches_original_5m_vocab_and_merges": null,
+  "pretokenization_seconds": 18.194069499964826,
+  "unique_pretokens": 226132
+}

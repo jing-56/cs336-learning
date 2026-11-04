@@ -48,13 +48,15 @@ E:\CS336\
 
 ---
 
-## 当前进度（2026-11-01）
+## 当前进度（2026-11-04）
+
+- [11 月 4 日实验](notes/2026-11-04-A1-EVALUATION-AND-OWT-BPE.md)补齐 TinyStories 完整验证（loss **1.9715**）、采样对照和高学习率失稳样例。OpenWebText 32K 分词器已完成 5、50、500 MiB 样本对照。500 MiB 紧凑版峰值内存 **0.89 GiB**，全量预分词、词表训练、编码和语言模型训练仍待完成。
 
 - 2026-11-01 GPU 版 PyTorch 安装后本地核验：**46 passed、2 skipped，17.06 秒**；两项跳过均为 Linux 专属内存限制测试。测试通过不代替完整数据实验。
 - 已跑通 BPE/Tokenizer、完整 Transformer、训练与生成闭环；5 MB 样本的训练/验证数组为 1,143,921 / 127,340 token，主要单组对照预算为 25.6 万目标 token。
 - 学习率七候选、RoPE 三种子、B=2/4/8、去 RMSNorm、post-norm、参数量配平的 SiLU 对照均已有记录。当前小配置里 pre-norm/SwiGLU 基线验证 loss 为 3.6541；结论限于对应设置。
 - 参数量、前向 FLOPs、XL 正式配置和 AdamW 时间核算已有脚本与推导；激活内存采用明确的简化记账口径，不是实测峰值。
-- **[A1 逐项交付核对与下一步](notes/2026-10-30-A1-COMPLETION-AUDIT.md)**：TinyStories 完整 BPE/编码已完成；完整训练集 profile、OWT/跨域分词、课程原始尺寸训练与正式实验、发散边界及 writeup/code 打包仍待补；生成样例与逐点日志见下方工具记录。
+- [A1 逐项交付核对与下一步](notes/2026-10-30-A1-COMPLETION-AUDIT.md)记录了原始核对清单。完整训练集 profile、OpenWebText 全量流程、课程原始尺寸实验、精确稳定边界及最终打包仍待补。
 - [训练/生成入口与操作说明](notes/2026-10-30-A1-TRAINING-TOOLS.md)已新增：配置、周期存档、累计耗时日志、CPU 精确续训检查及固定种子 256-token 样例。[Unicode/SGD 逐题回答及十步实验](notes/2026-11-01-A1-UNICODE-AND-SGD.md)已补齐，[完整 TinyStories 数据已下载校验，BPE 已支持按文档边界分块读取](notes/2026-11-01-A1-FULL-TINYSTORIES-PREPARATION.md)；[完整训练集 10k BPE 已完成](notes/2026-11-01-A1-TINYSTORIES-FULL-BPE.md)，[完整训练/验证编码已完成](notes/2026-11-01-A1-TINYSTORIES-FULL-ENCODING.md)，[新数据 CPU 起步训练](notes/2026-11-01-A1-FULL-DATA-TRAINING-START.md)后已[切到 RTX 3050](notes/2026-11-01-A1-GPU-TRAINING.md)，并[完成 20,000 步、4,096 万目标 token 的学习模型训练与 EOS 故事生成](notes/2026-11-01-A1-FULL-TRAINING-AND-GENERATION.md)；最终固定批次验证 loss=2.0210，模型尺寸小于课程原始配置。[本人源码快照](implementations/a1-basics/README.md)已同步 56 个活动模块、接入函数及三个配置，数据和模型存档不上传。
 
 完整导航见 [笔记索引](notes/INDEX.md)与[作业进度](plan/03-ASSIGNMENTS.md)。

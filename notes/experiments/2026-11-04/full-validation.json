@@ -1,0 +1,18 @@
+{
+  "checkpoint_step": 20000,
+  "checkpoint_sha256": "3bc650d46134f28bcd33b3e872d177cea74a40376e2a23b90fee5303712ac124",
+  "validation_sha256": "fb6e6f6401a34283be03ed6acdc97593602378869d52d00300510292d44b0e2b",
+  "device": "cuda",
+  "torch_version": "2.11.0+cu126",
+  "context_length": 256,
+  "batch_size": 8,
+  "validation_tokens": 5465883,
+  "evaluated_targets": 5465882,
+  "final_window_targets": 26,
+  "evaluation_policy": "non-overlapping input contexts, one-token-shifted targets, each target from index 1 scored once; context reset at each window",
+  "fixed_batch_targets": 20480,
+  "fixed_batch_loss": 2.020974898338318,
+  "full_validation_loss": 1.9715234275804878,
+  "full_validation_perplexity": 7.181608819873057,
+  "evaluation_seconds": 44.854564299981575
+}

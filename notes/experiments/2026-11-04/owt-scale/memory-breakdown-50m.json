@@ -1,0 +1,92 @@
+[
+  {
+    "merges": 0,
+    "rss_bytes": 187801600,
+    "pair_index_entries": 7279,
+    "singletons": 1576,
+    "memberships": 1575094,
+    "measured_container_bytes": {
+      "pretoken_counter_table": 7689664,
+      "pretoken_texts": 11224805,
+      "byte_counts_table": 10485848,
+      "word_list_and_tuples": 25484760,
+      "word_weights_list": 1827096,
+      "pair_index_table": 295000,
+      "posting_sets": 91764136,
+      "pair_count_table": 295008,
+      "heap_list_and_entries": 409128
+    }
+  },
+  {
+    "merges": 1000,
+    "rss_bytes": 299520000,
+    "pair_index_entries": 71248,
+    "singletons": 23873,
+    "memberships": 747019,
+    "measured_container_bytes": {
+      "pretoken_counter_table": 7689664,
+      "pretoken_texts": 11224805,
+      "byte_counts_table": 10485848,
+      "word_list_and_tuples": 18718696,
+      "word_weights_list": 1827096,
+      "pair_index_table": 2621536,
+      "posting_sets": 109971840,
+      "pair_count_table": 2621544,
+      "heap_list_and_entries": 5320424
+    }
+  },
+  {
+    "merges": 10000,
+    "rss_bytes": 360255488,
+    "pair_index_entries": 183885,
+    "singletons": 110471,
+    "memberships": 485591,
+    "measured_container_bytes": {
+      "pretoken_counter_table": 7689664,
+      "pretoken_texts": 11224805,
+      "byte_counts_table": 10485848,
+      "word_list_and_tuples": 16565120,
+      "word_weights_list": 1827096,
+      "pair_index_table": 10485856,
+      "posting_sets": 96429816,
+      "pair_count_table": 10485864,
+      "heap_list_and_entries": 19967112
+    }
+  },
+  {
+    "merges": 25000,
+    "rss_bytes": 379301888,
+    "pair_index_entries": 221701,
+    "singletons": 158577,
+    "memberships": 382332,
+    "measured_container_bytes": {
+      "pretoken_counter_table": 7689664,
+      "pretoken_texts": 11224805,
+      "byte_counts_table": 10485848,
+      "word_list_and_tuples": 15728240,
+      "word_weights_list": 1827096,
+      "pair_index_table": 10485856,
+      "posting_sets": 83388984,
+      "pair_count_table": 10485864,
+      "heap_list_and_entries": 18591384
+    }
+  },
+  {
+    "merges": 31743,
+    "rss_bytes": 377290752,
+    "pair_index_entries": 226422,
+    "singletons": 168781,
+    "memberships": 355612,
+    "measured_container_bytes": {
+      "pretoken_counter_table": 7689664,
+      "pretoken_texts": 11224805,
+      "byte_counts_table": 10485848,
+      "word_list_and_tuples": 15512904,
+      "word_weights_list": 1827096,
+      "pair_index_table": 10485856,
+      "posting_sets": 79369104,
+      "pair_count_table": 10485864,
+      "heap_list_and_entries": 20133336
+    }
+  }
+]

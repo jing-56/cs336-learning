@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-04",
+  "description": "Verified standalone experiment variants, archived byte-for-byte.",
+  "sha256": {
+    "bpe_heap.py": "c6eb430b1a785ab59f3003d098051d266b47f7914a23bb425cb3bc0dbea87e9d",
+    "bpe_compact.py": "89f57c0419ae6f089e1d901ab5e895134bf66d3126e60aaad5c79d815a97b654",
+    "measure.py": "3403df7e45b2997a202bc5c5a6fe180df1e7a3de90a6b5f99563cc64716bf9a3",
+    "prepare_500m.py": "ca8cc5701f963089351d129f3ffc03caf5026187ed32986f451a8a8599c3e020"
+  },
+  "verification": {
+    "python_files_syntax_checked": 4,
+    "heap_bpe_tests_passed": 3,
+    "compact_bpe_tests_passed": 3,
+    "heap_5m_equals_original": true,
+    "compact_50m_equals_heap": true,
+    "compact_500m_equals_heap": true
+  }
+}
