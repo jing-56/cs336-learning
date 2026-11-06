@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "completed_steps": 20000,
+  "total_steps": 20000,
+  "processed_tokens": 40960000,
+  "elapsed_seconds": 1968.5885927999989,
+  "best_val_loss": 4.9594189643859865,
+  "checkpoint": "checkpoint_step_020000.pt",
+  "checkpoint_sha256": "ae1cdbadc8d8fca00454bb2c915fb0882d7b81c11d7f7799d6fdc26bf4606e59",
+  "device_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "parameters": 9045120
+}

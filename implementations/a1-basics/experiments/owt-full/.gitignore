@@ -1,0 +1,12 @@
+*.gz
+*.part
+*.pkl
+*.npy
+*.lock
+*.log
+*.tmp
+pretoken-counts-*.json
+bpe-from-counts-*.json
+owt-*-full.json
+cuda_kernel_cache/
+training-run/

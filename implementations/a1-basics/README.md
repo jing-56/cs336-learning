@@ -1,6 +1,6 @@
 # A1 本人实现源码归档
 
-11 月 4 日的堆版、紧凑索引版和计时工具单独归档在 [OpenWebText BPE 实验](experiments/owt-bpe/)。下文仍描述 11 月 1 日的活动源码快照。
+11 月 4 日的样本源码归档在 [OpenWebText BPE 实验](experiments/owt-bpe/)，11 月 7 日的下载、位图 BPE、编码及训练入口归档在 [OpenWebText 全量实验](experiments/owt-full/)。下文描述 11 月 1 日的活动源码快照。
 
 本目录为 **2026-11-01** 累计快照，包含 56 个本人实现的活动模块、最小包标识和已实现接入函数，共 58 个 Python 文件，另附三个训练配置。活动开发目录仍是 `E:/CS336/assignments/a1-basics`。上游 starter、测试、fixtures、数据、模型和环境未复制。
 
@@ -44,4 +44,4 @@
 
 最近完整官方套件记录为 2026-11-01：46 passed、2 skipped、17.06 秒；两个跳过项为 Linux 内存限制。官方套件主要走 CPU，CUDA 前后向、AdamW、设备迁移和真实续训另有实测。归档额外核对 56 个模块与三个配置的原始 SHA-256、58 个 Python 文件语法及 adapter 实现一致性。
 
-[完整训练与生成记录](../../notes/2026-11-01-A1-FULL-TRAINING-AND-GENERATION.md)中，3.41M 参数学习模型完成 40.96M 目标 token，固定批次验证 loss=2.0210，生成 200 个新 token 后 EOS。此配置小于课程原始模型；OWT、完整 BPE profile、正式实验范围、Linux 内存验证和最终 writeup/code 交付仍未全部完成。数值、CSV、生成文本可随笔记查看，原数据和模型不上传。
+[完整训练与生成记录](../../notes/2026-11-01-A1-FULL-TRAINING-AND-GENERATION.md)中，3.41M 参数 TinyStories 学习模型完成 40.96M 目标 token，固定批次验证 loss=2.0210，生成 200 个新 token 后 EOS。[OpenWebText 小模型](../../notes/2026-11-07-A1-OPENWEBTEXT-FULL.md)以相同步数完成训练。两次都使用学习配置，正式实验范围、完整 TinyStories BPE profile、Linux 内存验证和最终 writeup/code 交付仍待补。数值、CSV、生成文本可随笔记查看。

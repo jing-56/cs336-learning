@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-07",
+  "description": "Full OpenWebText local run source snapshot with LF line endings.",
+  "sha256": {
+    "bpe_compact.py": "975c20997198288c95a2ce11d17718007158245b7d5840299c6c50e0fb0ef977",
+    "download_owt.py": "297b0f4864226f23d0d9776a0f322972e254d78b05f3f84a87d09e9215d0a6b6",
+    "count_owt_pretokens.py": "7142262ded0990bef366d6494676b3a6aff13096e5ea39844cd04c2fc94a6f79",
+    "run_full_count.py": "e195d1ef55c1459d13c3b0195e3777452fbe4ebcd1e6d29d56ec8bf7a18189a4",
+    "train_from_counts.py": "99fa68d7a0c6a557ec66d5662672a8edd104d7a7bed3a7c003d532b75786b64d",
+    "encode_owt.py": "a9add2c5d9b49e6b094430e754c7147ada50c96a9d4dc99206ccd9b40fba6603",
+    "train_owt.py": "c55403554986d9ee1108fb67edde9e439a77f838fd9ae97b70574a767e619bdd"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "source": "owt_train.txt.gz",
+  "source_bytes": 4591240837,
+  "decoded_chars": 11815998173,
+  "end_markers": 2399397,
+  "unique_pretokens": 6601892,
+  "pretoken_occurrences": 2471753092,
+  "peak_working_set_bytes": 1343135744,
+  "working_set_bytes": 693313536,
+  "system_available_bytes": 5603012608,
+  "count_seconds": 2824.858
+}

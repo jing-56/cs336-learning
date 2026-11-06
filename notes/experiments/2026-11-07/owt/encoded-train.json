@@ -1,0 +1,19 @@
+{
+  "identity": {
+    "source": "owt_train.txt.gz",
+    "source_bytes": 4591240837,
+    "dtype": "<u2",
+    "tokenizer_sha256": "f4e9a2e6a1498d1a01edd75e450e7f0d13c0ded88f9f04bcb183b6fc3304b2f0",
+    "pretoken_pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}+| ?\\p{N}+| ?[^\\s\\p{L}\\p{N}]+|\\s+(?!\\S)|\\s+",
+    "newline_policy": "preserve original bytes"
+  },
+  "complete": true,
+  "chars": 11815998173,
+  "decoded_bytes": 11920511059,
+  "tokens": 2727120452,
+  "eos": 2399397,
+  "seconds": 2338.9379999999983,
+  "npy_sha256": "72397c3cd5943e445977604f5d7a5c889e7a1ffe5ceb1e095253db0ab3343302",
+  "npy_file_bytes": 5454241032,
+  "full_byte_exact_roundtrip": true
+}

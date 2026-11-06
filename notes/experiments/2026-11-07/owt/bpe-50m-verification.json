@@ -1,0 +1,48 @@
+{
+  "case": "50m",
+  "vocabulary_size": 32000,
+  "merge_count": 31743,
+  "elapsed_seconds": 24.89,
+  "peak_working_set_bytes": 235311104,
+  "available_before_bytes": 8106336256,
+  "lowest_observed_available_bytes": 7900151808,
+  "stages": [
+    {
+      "stage": "load frequencies",
+      "working_set_bytes": 23539712,
+      "peak_working_set_bytes": 23539712,
+      "available_bytes": 8106328064
+    },
+    {
+      "stage": "prepare words",
+      "working_set_bytes": 44580864,
+      "peak_working_set_bytes": 54370304,
+      "available_bytes": 8077111296
+    },
+    {
+      "stage": "build index",
+      "working_set_bytes": 57536512,
+      "peak_working_set_bytes": 74665984,
+      "available_bytes": 8077131776
+    },
+    {
+      "stage": "count initial pairs",
+      "working_set_bytes": 94593024,
+      "peak_working_set_bytes": 94593024,
+      "available_bytes": 8044601344
+    },
+    {
+      "stage": "merge",
+      "working_set_bytes": 96026624,
+      "peak_working_set_bytes": 96026624,
+      "available_bytes": 8030171136
+    },
+    {
+      "stage": "complete",
+      "working_set_bytes": 157548544,
+      "peak_working_set_bytes": 235311104,
+      "available_bytes": 7961722880
+    }
+  ],
+  "matches_reference": true
+}
