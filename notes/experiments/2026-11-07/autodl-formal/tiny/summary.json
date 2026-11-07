@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "completed_steps": 20000,
+  "total_steps": 20000,
+  "processed_tokens": 327680000,
+  "elapsed_seconds": 1919.979711059481,
+  "best_val_loss": 1.3775400400161744,
+  "checkpoint": "checkpoint_step_020000.pt"
+}

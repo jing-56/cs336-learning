@@ -1,6 +1,6 @@
 # CS336 A1｜分词、模型训练与资源核算
 
-两个本地小模型各更新 **20,000 步**，各处理 **4,096 万个训练目标位置**。TinyStories 的全量验证交叉熵为 **1.9715**，OpenWebText 为 **4.9895**。这两项分数分别描述模型对各自验证集的预测表现。
+TinyStories 与 OpenWebText 的两次正式尺寸训练各更新 **20,000 步**，各处理 **327,680,000 个训练目标位置**。最终全量验证 loss 分别为 **1.3517** 和 **3.9645**。TinyStories 达到讲义的 **1.45** 数值目标。下文保留两套本地小模型和各项小预算消融的结果。
 
 本文按本地 A1 讲义 Version 26.0.3 整理。训练曲线和分析使用已有运行，详细配置、原始记录和复现入口随学习仓库归档。
 
@@ -64,7 +64,7 @@ TinyStories 的计时覆盖 `train_bpe` 内的预分词与合并，词表写盘�
 
 [跨域对照与吞吐原始数据](experiments/2026-11-07/owt/tokenizer-comparison.json) · [TinyStories 编码结果](experiments/2026-11-01/tinystories-full-encoding/encoding-result.json) · [OpenWebText 训练集编码](experiments/2026-11-07/owt/encoded-train.json) · [OpenWebText 验证集编码](experiments/2026-11-07/owt/encoded-valid.json)
 
-## 语言模型实验设置
+## 本地小模型实验设置
 
 两次运行共用 4 层 pre-norm Transformer 主干，模型宽度 128、4 个注意力头、FFN 宽度 384，使用 RoPE 和 SwiGLU。每步取 8 个长度为 256 的窗口，用自写 AdamW 在 FP32 下训练。学习率前 200 步升至 0.001，再按余弦下降至 0.0001。两次运行均用 seed 42，验证采样种子为 12345。
 
@@ -121,6 +121,86 @@ Tim、朋友和银色的箭贯穿全文，故事有开头也有结尾。中间�
 模型生成了报道常见的日期、引语和段落结构，但从市议会转到银行、慈善组织和枪击事件时，缺少能串起这些事件的叙述。一个可能的原因是网页语料涵盖更多主题和文体，有限的训练预算要分给更多种写法。这里各观察一段输出，提示词、词表和训练语料也不同，因此只比较样例里能直接看到的现象。
 
 [TinyStories 全文](experiments/2026-11-01/full-training-20k/sample.md) · [OpenWebText 全文](experiments/2026-11-07/owt/sample.txt) · [TinyStories 生成参数](experiments/2026-11-01/full-training-20k/generation.json) · [OpenWebText 生成参数](experiments/2026-11-07/owt/generation.json)
+
+## TinyStories 正式尺寸训练
+
+在 AutoDL 单张 RTX PRO 6000 Blackwell Server Edition 上，用 10K 词表、4 层、宽度 512、16 个注意力头和前馈宽度 1,344 从头训练。batch 64、上下文 256、20,000 步，共处理 **327,680,000** 个训练目标位置。FP32，PyTorch 2.12.1+cu130，峰值学习率 0.001，预热 200 步。数据和词表沿用完整 TinyStories BPE 的产物。
+
+| 项目 | 正式运行结果 |
+| --- | ---: |
+| 初始固定批次验证 loss | 9.2594 |
+| 第 200 步固定批次验证 loss | 2.9422 |
+| 第 20,000 步固定批次验证 loss | 1.37870456 |
+| 第 20,000 步全量验证 loss | **1.351745** |
+| 全量困惑度 | 约 3.86 |
+| 全量验证目标位置 | 5,465,882 |
+| 累计训练日志时间 | 1,919.75 秒（约 32 分钟） |
+| 第 100 至 200 步实测训练吞吐 | 171,884 token/秒 |
+| 前 200 步 PyTorch 峰值分配显存 | 7.15 GiB |
+
+全量评估复现了固定批次 loss，并用连续的 256-token 窗口在整份验证集逐位置打分，耗时 8.01 秒。两种口径下的结果都低于讲义的 1.45 数值目标。[配置](experiments/2026-11-07/autodl-formal/tiny/config.json) · [完整训练 CSV](experiments/2026-11-07/autodl-formal/tiny/metrics.csv) · [全量评估](experiments/2026-11-07/autodl-formal/tiny/full-validation.json)
+
+用第 20,000 步存档续写 `Once upon a time`，temperature 0.8、top-p 0.9、seed 42，生成 128 个新 token 后遇到 EOS。故事始终围绕石头和小女孩展开。石头前面被描述为又大又重，后面却能放进小女孩的口袋。[生成原始 JSON](experiments/2026-11-07/autodl-formal/tiny/generation.json)
+
+```text
+Once upon a time, there was a big, heavy rock. The rock lived in a park with many other rocks. They were all friends and liked to play together.
+One day, a little girl came to the park. She saw the heavy rock and wanted to play with it. She picked up the rock and put it in her pocket. The rock was happy to have a friend.
+The little girl took the heavy rock home. She showed it to her mom and dad. They all played with the rock and had lots of fun. The heavy rock was very happy to have a new friend. And they all lived happily ever after.
+<|endoftext|>
+```
+
+## OpenWebText 正式尺寸训练
+
+沿用 TinyStories 正式实验的 4 层、宽度 512、16 个头、前馈宽度 1,344、上下文 256 和 batch 64，使用 OpenWebText 32K 词表训练 20,000 步，共处理 **327,680,000** 个目标位置。两次正式训练使用同一张 AutoDL RTX PRO 6000 Blackwell Server Edition。词表大小不同，输入嵌入和输出投影的大小随之改变。
+
+| 项目 | OpenWebText 正式运行结果 |
+| --- | ---: |
+| 初始固定批次验证 loss | 10.3932 |
+| 第 200 步固定批次验证 loss | 6.1501 |
+| 第 20,000 步固定批次验证 loss | **3.9521** |
+| 第 20,000 步全量验证 loss | **3.96451432** |
+| 全量困惑度 | 52.6947 |
+| 全量验证目标位置 | 66,401,097 |
+| 累计训练日志时间 | 2,596.78 秒（约 43 分 17 秒） |
+| 第 100 至 200 步实测训练吞吐 | 127,139 token/秒 |
+| 前 200 步 PyTorch 峰值分配显存 | 11.43 GiB |
+
+全量评估使用连续的 256-token 窗口，覆盖验证数组中首 token 之后的所有目标位置，耗时 126.09 秒。[配置](experiments/2026-11-07/autodl-formal/owt/config.json) · [完整训练 CSV](experiments/2026-11-07/autodl-formal/owt/metrics.csv) · [全量评估](experiments/2026-11-07/autodl-formal/owt/full-validation.json)
+
+第 20,000 步存档以新闻式提示词续写了 256 个新 token，达到长度上限。样例保持了市议会和预算的主题，日期、金额和引语也像新闻报道。具体政策关系仍不连贯，例如从拨款跳到与军事政变有关的选举，多个预算金额也缺少交代。两套模型使用不同语料、词表和提示词，观察限于这两条样例。[生成原始 JSON](experiments/2026-11-07/autodl-formal/owt/generation.json)
+
+```text
+The city council announced on Tuesday that it will spend $2.1 million on defense funding in the country.
+
+In a statement released last week, the city council said it will not go into effect until the election that legalized a military coup will be held on Sunday.
+
+The council approved the extension of the controversial new spending measure last year, which would allow the town to shut down on more than $1 billion, according to council's spokesman.
+
+The council also said the money will be cut and a total of $2.1 million is needed to balance the tax.
+
+The City Council is investigating the $1.1 million raised by the city. The council's budget is expected to be $1.4 million.
+
+Councillors are expected to spend more than $1 million on a budget of $1 million.
+
+Council chairman Paul Méton said the council would see a $3.5 million increase as a result of the purchase of the building of the current fiscal year.
+
+"I don't think the proposed budget was the last thing to do and will be a significant tax to the city," he said.
+
+Council voted last year to approve the proposal, but councillors said the council would work with the council, which would
+```
+
+### 正式尺寸与本地小模型对照
+
+![两套正式模型的固定批次验证 loss。横轴为累计训练目标位置数。](experiments/2026-11-07/autodl-formal/learning-curves.svg)
+
+| 验证集 | 全量预测位置 | 本地小模型 loss | 正式尺寸 loss | 正式尺寸困惑度 | 正式训练耗时 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| TinyStories | 5,465,882 | 1.9715 | **1.3517** | 3.86 | 32 分钟 |
+| OpenWebText | 66,401,097 | 4.9895 | **3.9645** | 52.69 | 43 分 17 秒 |
+
+同一语料的两次运行沿用同一词表和分段评分口径。TinyStories 的全量 loss 下降约 0.620，OpenWebText 下降约 1.025。这轮同时增加了模型宽度、训练 token 预算和 batch，也更换了设备，因此表中是两套完整配置的结果，无法从中分出单个因素的贡献。TinyStories 与 OpenWebText 的每 token 分数还各自依赖语料和词表。
+
+[AutoDL 正式结果归档](experiments/2026-11-07/autodl-formal/README.md) · [云端复现入口](../implementations/a1-basics/experiments/autodl/README.md)
 
 ## SGD 学习率小实验
 
@@ -276,8 +356,8 @@ FP32 下，参数和梯度各需 `4P` 字节，AdamW 的一阶矩和二阶矩合
 
 ## 交付范围
 
-这是 A1 的个人自学归档。TinyStories 全量 loss 低于讲义低资源提示里的 2.00 数值目标，使用的是本报告的模型尺寸和窗口评估口径。Linux 分词器内存限制、课程原尺寸实验、更宽的 batch 扫描、精确学习率稳定边界和排行榜仍未覆盖。
+这是 A1 的个人自学归档。TinyStories 和 OpenWebText 已完成正式尺寸与 token 预算的训练、全量验证和样例生成，全量 loss 分别为 1.351745 和 3.96451432。Linux 分词器内存限制、更宽的 batch 扫描、精确学习率稳定边界和排行榜仍待覆盖。
 
-打包后解压 `code.zip`，用包内源码和已归档的接入函数重新运行现有 A1 测试集。Windows 上结果为 **46 项通过、2 项跳过**，耗时 17.11 秒。跳过的是依赖 `resource` 内存限制的两个分词器测试。
+上一版 `code.zip` 解压复验为 **46 项通过、2 项跳过**，耗时 17.11 秒。这版代码包的核心实现和测试接入函数与受测文件逐字节一致。跳过的是依赖 `resource` 内存限制的两个分词器测试。
 
 [Unicode 与 SGD 逐题记录](2026-11-01-A1-UNICODE-AND-SGD.md) · [A1 交付核对与原始清单](2026-10-30-A1-COMPLETION-AUDIT.md)

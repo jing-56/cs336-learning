@@ -1,0 +1,55 @@
+{
+  "tiny": {
+    "vocab_size": 10000,
+    "train": "train.npy",
+    "validation": "valid.npy",
+    "tokenizer": [
+      "vocab.pkl",
+      "merges.pkl"
+    ],
+    "files": {
+      "train.npy": {
+        "bytes": 1082458822,
+        "sha256": "5ccfd3db1d60c4fe5292f385f90d1f1488e54e23ab2f5e171dcf61a4d415cd4f",
+        "tokens": 541229347
+      },
+      "valid.npy": {
+        "bytes": 10931894,
+        "sha256": "fb6e6f6401a34283be03ed6acdc97593602378869d52d00300510292d44b0e2b",
+        "tokens": 5465883
+      },
+      "vocab.pkl": {
+        "bytes": 117702,
+        "sha256": "b9a3565b55d0b16c03a7fd876296207084932b799923418055c7d48cacb7b7ea"
+      },
+      "merges.pkl": {
+        "bytes": 129778,
+        "sha256": "41eec5a68dd9034e81890b73f80f0e7ae0618f9063cc4cb19f51586c8801d41f"
+      }
+    }
+  },
+  "owt": {
+    "vocab_size": 32000,
+    "train": "owt-train-full.npy",
+    "validation": "owt-valid-full.npy",
+    "tokenizer": [
+      "owt-full-32k.pkl"
+    ],
+    "files": {
+      "owt-train-full.npy": {
+        "bytes": 5454241032,
+        "sha256": "72397c3cd5943e445977604f5d7a5c889e7a1ffe5ceb1e095253db0ab3343302",
+        "tokens": 2727120452
+      },
+      "owt-valid-full.npy": {
+        "bytes": 132802324,
+        "sha256": "84c035a210e4dc5d7aa85abada178d870370fa1bd9394803dd7cd65f924c5c38",
+        "tokens": 66401098
+      },
+      "owt-full-32k.pkl": {
+        "bytes": 747540,
+        "sha256": "f4e9a2e6a1498d1a01edd75e450e7f0d13c0ded88f9f04bcb183b6fc3304b2f0"
+      }
+    }
+  }
+}

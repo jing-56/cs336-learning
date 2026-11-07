@@ -1,0 +1,17 @@
+{
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "capability": [
+    12,
+    0
+  ],
+  "vram_gib": 94.97,
+  "torch": "2.12.1+cu130",
+  "cuda": "13.0",
+  "from_step": 100,
+  "to_step": 200,
+  "seconds": 9.532037638127804,
+  "tokens_per_second": 171883.50090503835,
+  "estimated_total_training_minutes": 31.773458793759346,
+  "estimated_remaining_minutes": 31.455724205821753,
+  "peak_cuda_allocated_gib": 7.1526408195495605
+}

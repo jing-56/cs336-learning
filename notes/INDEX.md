@@ -72,10 +72,10 @@
 
 [A1 自学版 PDF 和代码包](../deliverables/a1-basics/README.md)包含交付文件及解压复验结果。
 
-截至 2026-11-07，OpenWebText 全量数据已完成分词和编码，本地小模型已完成训练、生成和全量验证。
+截至 2026-11-08，TinyStories 与 OpenWebText 的两次正式主训练已完成归档，全量验证 loss 分别为 1.3517 和 3.9645。[正式曲线与日志](experiments/2026-11-07/autodl-formal/)
 
 - 2026-11-01 更换 GPU 版 PyTorch 后完整收集 48 项，46 项通过、两项 Linux 内存测试跳过，17.06 秒；见[本次 GPU 切换记录](2026-11-01-A1-GPU-TRAINING.md)。
 - 四类结构消融和 batch 对比已有小配置曲线，资源核算已有带假设的说明。已有教学实验不能替代全语料和正式训练预算。
-- Unicode/SGD 逐题回答、十步实测和完整 TinyStories 训练集 profile 已补齐。课程原始尺寸对照和精确稳定边界仍待补。[TinyStories 全量 profile](experiments/2026-11-07/tinystories-bpe-profile/README.md)
+- Unicode/SGD 逐题回答、十步实测和完整 TinyStories 训练集 profile 已补齐。更宽的 batch 扫描、原尺寸消融和精确稳定边界仍待补。[TinyStories 全量 profile](experiments/2026-11-07/tinystories-bpe-profile/README.md)
 - 训练/生成工具已完成短运行验证，完整 TinyStories 数据已校验，分块读取已验证；完整训练集 10k BPE 已完成；完整 TinyStories 编码已完成，新模型已从 CPU100 步迁移至 GPU，[完成 20,000 步、4,096 万目标 token 及故事生成](2026-11-01-A1-FULL-TRAINING-AND-GENERATION.md)，最终固定批次验证 loss=2.0210，下一步补剩余实验，再按[交付清单](2026-10-30-A1-COMPLETION-AUDIT.md)补齐。未完成 Linux 内存验证，不额外把任意切块等价升级为讲义未明确要求的必交项。
 - [源码快照](../implementations/a1-basics/README.md)现保存 56 个活动模块、最小包标识、接入函数和三个训练配置，含新增 18 个模块及 bpe.py 分块读取改动；数据、模型存档和上游测试不上传。课程讲次状态不依据代码进度自动勾选。

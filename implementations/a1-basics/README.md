@@ -1,5 +1,7 @@
 # A1 本人实现源码归档
 
+正式尺寸主训练的入口及配置见 [AutoDL 复现目录](experiments/autodl/)。[正式训练归档](../../notes/experiments/2026-11-07/autodl-formal/)包含两套模型的完整曲线、全量验证和生成结果。
+
 11 月 4 日的样本源码归档在 [OpenWebText BPE 实验](experiments/owt-bpe/)，11 月 7 日的下载、位图 BPE、编码及训练入口归档在 [OpenWebText 全量实验](experiments/owt-full/)。下文描述 11 月 1 日的活动源码快照。
 
 本目录为 **2026-11-01** 累计快照，包含 56 个本人实现的活动模块、最小包标识和已实现接入函数，共 58 个 Python 文件，另附三个训练配置。活动开发目录仍是 `E:/CS336/assignments/a1-basics`。上游 starter、测试、fixtures、数据、模型和环境未复制。

@@ -48,9 +48,9 @@ E:\CS336\
 
 ---
 
-## 当前进度（2026-11-07）
+## 当前进度（2026-11-08）
 
-- A1 自学版已整理为 PDF 和代码包。解压复验为 46 项通过、2 项跳过。[下载与复现说明](deliverables/a1-basics/README.md)
+- **A1 自学主线完成。** TinyStories 和 OpenWebText 都已跑完正式尺寸训练、全量验证和生成，分别得到全量 loss **1.3517** 和 **3.9645**。每组 20,000 步、327,680,000 个训练目标位置。[最终报告和代码包](deliverables/a1-basics/README.md) · [AutoDL 原始结果](notes/experiments/2026-11-07/autodl-formal/)
 - [A1 实验与核算总报告](notes/A1-TRAINING-REPORT.md)汇总 TinyStories 和 OpenWebText 的分词、训练、生成、调参与消融，以及 Transformer 和 AdamW 的资源核算。
 - [11 月 7 日 OpenWebText 实验](notes/2026-11-07-A1-OPENWEBTEXT-FULL.md)完成全量 32K BPE、完整训练集与验证集编码，并在 RTX 3050 上跑完 **20,000 步**小模型训练。全量验证 loss 为 **4.9895**，已记录 **256 个新 token** 的生成样例和最终词表的跨域对照。
 - [11 月 4 日实验](notes/2026-11-04-A1-EVALUATION-AND-OWT-BPE.md)补齐 TinyStories 完整验证（loss **1.9715**）、采样对照、高学习率失稳样例与 OpenWebText 分词样本对照。
@@ -59,7 +59,7 @@ E:\CS336\
 - 已跑通 BPE/Tokenizer、完整 Transformer、训练与生成闭环；5 MB 样本的训练/验证数组为 1,143,921 / 127,340 token，主要单组对照预算为 25.6 万目标 token。
 - 学习率七候选、RoPE 三种子、B=2/4/8、去 RMSNorm、post-norm、参数量配平的 SiLU 对照均已有记录。当前小配置里 pre-norm/SwiGLU 基线验证 loss 为 3.6541；结论限于对应设置。
 - 参数量、前向 FLOPs、XL 正式配置和 AdamW 时间核算已有脚本与推导；激活内存采用明确的简化记账口径，不是实测峰值。
-- TinyStories 完整训练集 profile 已补齐，预分词占 80.27%。课程原始尺寸实验和精确稳定边界仍待补。[全量 profile](notes/experiments/2026-11-07/tinystories-bpe-profile/README.md) · [A1 原始交付核对](notes/2026-10-30-A1-COMPLETION-AUDIT.md)
+- TinyStories 完整训练集 profile 已补齐，预分词占 80.27%。扩展批量扫描、精确学习率稳定边界和排行榜另列在交付范围。[全量 profile](notes/experiments/2026-11-07/tinystories-bpe-profile/README.md) · [A1 原始交付核对](notes/2026-10-30-A1-COMPLETION-AUDIT.md)
 - [训练/生成入口与操作说明](notes/2026-10-30-A1-TRAINING-TOOLS.md)已新增：配置、周期存档、累计耗时日志、CPU 精确续训检查及固定种子 256-token 样例。[Unicode/SGD 逐题回答及十步实验](notes/2026-11-01-A1-UNICODE-AND-SGD.md)已补齐，[完整 TinyStories 数据已下载校验，BPE 已支持按文档边界分块读取](notes/2026-11-01-A1-FULL-TINYSTORIES-PREPARATION.md)；[完整训练集 10k BPE 已完成](notes/2026-11-01-A1-TINYSTORIES-FULL-BPE.md)，[完整训练/验证编码已完成](notes/2026-11-01-A1-TINYSTORIES-FULL-ENCODING.md)，[新数据 CPU 起步训练](notes/2026-11-01-A1-FULL-DATA-TRAINING-START.md)后已[切到 RTX 3050](notes/2026-11-01-A1-GPU-TRAINING.md)，并[完成 20,000 步、4,096 万目标 token 的学习模型训练与 EOS 故事生成](notes/2026-11-01-A1-FULL-TRAINING-AND-GENERATION.md)；最终固定批次验证 loss=2.0210，模型尺寸小于课程原始配置。[本人源码快照](implementations/a1-basics/README.md)已同步 56 个活动模块、接入函数及三个配置，数据和模型存档不上传。
 
 完整导航见 [笔记索引](notes/INDEX.md)与[作业进度](plan/03-ASSIGNMENTS.md)。
