@@ -15,6 +15,8 @@ pytest-cache-files-*/
 *.zip
 *.pdf
 !plan/*.pdf
+!deliverables/a1-basics/writeup.pdf
+!deliverables/a1-basics/code.zip
 
 # 系统
 .DS_Store

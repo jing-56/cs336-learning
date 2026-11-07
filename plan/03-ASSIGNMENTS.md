@@ -17,7 +17,7 @@
 
 本地 handout Version 26.0.3 逐项核对见 **[A1 交付清单](../notes/2026-10-30-A1-COMPLETION-AUDIT.md)**。
 
-11 月 7 日完成 OpenWebText 全量 32K BPE、完整训练与验证集编码、RTX 3050 上 20,000 步小模型训练和生成。固定验证批次 loss 为 **4.9594**。[实验记录](../notes/2026-11-07-A1-OPENWEBTEXT-FULL.md)
+11 月 7 日完成 OpenWebText 全量 32K BPE、完整训练与验证集编码、RTX 3050 上 20,000 步小模型训练和生成。全量验证 loss **4.9895**、困惑度 **146.86**，同时补齐最终词表的跨域对照和纯编码测速。[实验记录](../notes/2026-11-07-A1-OPENWEBTEXT-FULL.md)
 
 11 月 4 日完成 TinyStories 全验证集评估（loss **1.9715**，perplexity **7.1816**）、采样对照和高学习率失稳实验。[实验记录](../notes/2026-11-04-A1-EVALUATION-AND-OWT-BPE.md)
 
@@ -28,7 +28,7 @@
 | 超参数与结构对照 | RoPE 三种子、七候选 LR、B=2/4/8、去 RMSNorm、post-norm、配平 SiLU 已有小配置曲线；不代表正式范围和预算已全部覆盖 |
 | 资源核算 | Transformer a–e 与 AdamW a–d 有说明和脚本；激活采用明确的简化输出记账，仍须在 writeup 校核并保留口径限制 |
 | 数据与正式目标 | TinyStories 与 OpenWebText 均已完成数据校验、BPE、完整训练与验证集编码和本地小模型训练。两个模型各执行 20,000 步、预测 4,096 万个目标位置。课程原始尺寸的实验仍待补。 |
-| 书面与最终交付 | Unicode/SGD 已有逐题回答与十步实验，两套数据均有分词和生成记录。完整 TinyStories 训练集 profile、精确稳定边界和最终 writeup.pdf/code.zip 仍待补。 |
+| 书面与最终交付 | Unicode/SGD、全量 BPE profile、分词、训练和生成已整理成自学版 [writeup.pdf 与 code.zip](../deliverables/a1-basics/README.md)。精确稳定边界等课程范围见交付说明。 |
 
 训练/生成工具及逐点日志已完成短运行验证，Identity 已替换为自写 PassThrough，旧存档重算结果一致。[使用说明](../notes/2026-10-30-A1-TRAINING-TOOLS.md)。[Unicode/SGD 小题](../notes/2026-11-01-A1-UNICODE-AND-SGD.md)已完成，[完整 TinyStories 已下载校验](../notes/2026-11-01-A1-FULL-TINYSTORIES-PREPARATION.md)，[完整训练集 10k BPE 已完成](../notes/2026-11-01-A1-TINYSTORIES-FULL-BPE.md)，[完整编码已完成](../notes/2026-11-01-A1-TINYSTORIES-FULL-ENCODING.md)，[新数据 CPU 起步](../notes/2026-11-01-A1-FULL-DATA-TRAINING-START.md)后已[切 GPU](../notes/2026-11-01-A1-GPU-TRAINING.md)，并[完成 20,000 步训练和 EOS 故事生成](../notes/2026-11-01-A1-FULL-TRAINING-AND-GENERATION.md)，下一步补正式实验和书面交付；任意切块等价仍是额外质量范围，不误标为已失败的官方测试。
 

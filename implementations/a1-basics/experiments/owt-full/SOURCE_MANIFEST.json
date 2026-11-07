@@ -8,6 +8,8 @@
     "run_full_count.py": "e195d1ef55c1459d13c3b0195e3777452fbe4ebcd1e6d29d56ec8bf7a18189a4",
     "train_from_counts.py": "99fa68d7a0c6a557ec66d5662672a8edd104d7a7bed3a7c003d532b75786b64d",
     "encode_owt.py": "a9add2c5d9b49e6b094430e754c7147ada50c96a9d4dc99206ccd9b40fba6603",
-    "train_owt.py": "c55403554986d9ee1108fb67edde9e439a77f838fd9ae97b70574a767e619bdd"
+    "train_owt.py": "c55403554986d9ee1108fb67edde9e439a77f838fd9ae97b70574a767e619bdd",
+    "evaluate_full.py": "69a4c8fc1720749fd0c34fd1e4f60bdc9e2a386f7140e43cbac2785b4d94f125",
+    "compare_tokenizers.py": "bd3427b2525c2722f5c0969f9f9e8e756846ff13e646c189fab2a2cae3822ec6"
   }
 }

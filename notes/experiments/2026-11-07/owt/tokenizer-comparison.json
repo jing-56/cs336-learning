@@ -1,0 +1,82 @@
+{
+  "tokenizer_sha256": {
+    "tinystories_vocab": "b9a3565b55d0b16c03a7fd876296207084932b799923418055c7d48cacb7b7ea",
+    "tinystories_merges": "41eec5a68dd9034e81890b73f80f0e7ae0618f9063cc4cb19f51586c8801d41f",
+    "openwebtext_model": "f4e9a2e6a1498d1a01edd75e450e7f0d13c0ded88f9f04bcb183b6fc3304b2f0"
+  },
+  "sample_json_sha256": {
+    "tinystories": "3c9d954beb2500af23bcd8eb670b44573ca0c17235cce43b688c36572fd30144",
+    "openwebtext": "b46717ee471ddea28d5830e328d5692a59621ad9d8e31df641b5b32fd653ccaf"
+  },
+  "documents_per_domain": 10,
+  "results": {
+    "tinystories": {
+      "tinystories_10k": {
+        "tokens": 2084,
+        "utf8_bytes": 8457,
+        "bytes_per_token": 4.0580614203454894,
+        "roundtrip": true
+      },
+      "openwebtext_32k": {
+        "tokens": 2145,
+        "utf8_bytes": 8457,
+        "bytes_per_token": 3.9426573426573426,
+        "roundtrip": true
+      }
+    },
+    "openwebtext": {
+      "tinystories_10k": {
+        "tokens": 10134,
+        "utf8_bytes": 32294,
+        "bytes_per_token": 3.1866982435366094,
+        "roundtrip": true
+      },
+      "openwebtext_32k": {
+        "tokens": 7582,
+        "utf8_bytes": 32294,
+        "bytes_per_token": 4.259298338169349,
+        "roundtrip": true
+      }
+    }
+  },
+  "example": {
+    "text": " legislation",
+    "tinystories_pieces": [
+      " leg",
+      "is",
+      "l",
+      "ation"
+    ],
+    "openwebtext_pieces": [
+      " legislation"
+    ]
+  },
+  "longest_openwebtext_token": {
+    "bytes_repr": "b'\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82'",
+    "bytes": 64
+  },
+  "throughput": {
+    "utf8_bytes": 1047142,
+    "sha256": "ff41e320697a46339f76324cd05c01a2cce3a63f73d0e91ed83913588fbf0645",
+    "repeats": 3,
+    "scope": "encoding only, OpenWebText validation prefix through last EOS, median of 3",
+    "python": {
+      "seconds": [
+        7.993901599998935,
+        8.20064559999446,
+        8.484676000007312
+      ],
+      "bytes_per_second": 127690.1906358089,
+      "estimated_825_decimal_gb_hours": 1794.708469973888
+    },
+    "accelerated": {
+      "seconds": [
+        0.19468710001092404,
+        0.19816679999348707,
+        0.19637649999640416
+      ],
+      "bytes_per_second": 5332318.276469813,
+      "estimated_825_decimal_gb_hours": 42.9769295051126
+    }
+  }
+}

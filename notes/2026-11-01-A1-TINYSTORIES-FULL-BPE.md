@@ -2,6 +2,8 @@
 
 完整训练集已实际训练完成。输入是官方 `TinyStoriesV2-GPT4-train.txt`，2,227,753,162 字节，revision `f54c09fd23315a6f9c86f9dc80f725de7d8f9c64`，不是之前 5 MB 样本，也不是验证集调试词表。
 
+11 月 7 日已补跑完整训练集 profile，发现预分词占 80.27%，词表和规则与本次普通训练逐项一致。下文保留 11 月 1 日的记录。[全量 profile](experiments/2026-11-07/tinystories-bpe-profile/README.md)
+
 ## 实际结果
 
 | 项目 | 实测 |

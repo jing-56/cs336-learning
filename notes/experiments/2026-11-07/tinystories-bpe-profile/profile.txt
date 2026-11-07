@@ -1,0 +1,74 @@
+         1024226355 function calls (1024224116 primitive calls) in 1276.493 seconds
+
+   Ordered by: cumulative time
+   List reduced from 247 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       26    0.000    0.000 1890.276   72.703 threading.py:637(wait)
+       26   51.260    1.972 1890.275   72.703 threading.py:323(wait)
+     2125  768.796    0.362  963.679    0.453 bpe.py:42(pretokenize_counts)
+     9743    4.790    0.000  454.946    0.047 profile_full_bpe.py:65(timed_max)
+9745/9744  112.083    0.012  229.625    0.024 {built-in method builtins.max}
+536592168  118.645    0.000  118.645    0.000 {method 'group' of '_regex.Match' objects}
+369218707  117.577    0.000  117.578    0.000 bpe.py:144(<lambda>)
+  2719824    4.711    0.000   71.341    0.000 _main.py:350(finditer)
+  2721950   15.693    0.000   58.996    0.000 _main.py:459(_compile)
+        1    0.000    0.000   43.630   43.630 profile_full_bpe.py:56(timed_pretokenize)
+        1    0.272    0.272   43.629   43.629 bpe.py:64(pretokenize_file_counts)
+  5444059   12.750    0.000   34.740    0.000 enum.py:1561(__and__)
+        1    0.044    0.044   16.259   16.259 bpe.py:98(train_bpe)
+ 16332203    9.871    0.000   15.727    0.000 enum.py:1543(_get_value)
+   837592    5.459    0.000   10.769    0.000 __init__.py:669(update)
+  2721948    7.750    0.000    7.750    0.000 {method 'finditer' of '_regex.Pattern' objects}
+ 30504595    6.709    0.000    7.215    0.000 {built-in method builtins.isinstance}
+  5444069    3.644    0.000    6.264    0.000 enum.py:720(__call__)
+ 12825037    5.061    0.000    5.061    0.000 {method 'get' of 'dict' objects}
+      107    3.770    0.035    4.749    0.044 {method 'acquire' of '_thread.lock' objects}
+  2721950    3.204    0.000    4.556    0.000 <frozen importlib._bootstrap>:1390(_handle_fromlist)
+     2125    2.761    0.001    4.426    0.002 {method 'read' of '_io.TextIOWrapper' objects}
+     2125    0.008    0.000    4.352    0.002 _main.py:324(split)
+     2125    4.249    0.002    4.249    0.002 {method 'split' of '_regex.Pattern' objects}
+   277780    2.146    0.000    3.494    0.000 bpe.py:17(merge_pair)
+   835467    1.254    0.000    3.137    0.000 __init__.py:595(__init__)
+  2721950    2.877    0.000    2.877    0.000 _main.py:481(complain_unused_args)
+  5444069    2.620    0.000    2.620    0.000 enum.py:1128(__new__)
+     3754    0.013    0.000    1.663    0.000 <frozen codecs>:319(decode)
+     3754    1.650    0.000    1.650    0.000 {built-in method _codecs.utf_8_decode}
+
+
+         1024226355 function calls (1024224116 primitive calls) in 1276.493 seconds
+
+   Ordered by: internal time
+   List reduced from 247 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     2125  768.796    0.362  963.679    0.453 bpe.py:42(pretokenize_counts)
+536592168  118.645    0.000  118.645    0.000 {method 'group' of '_regex.Match' objects}
+369218707  117.577    0.000  117.578    0.000 bpe.py:144(<lambda>)
+9745/9744  112.083    0.012  229.625    0.024 {built-in method builtins.max}
+       26   51.260    1.972 1890.275   72.703 threading.py:323(wait)
+  2721950   15.693    0.000   58.996    0.000 _main.py:459(_compile)
+  5444059   12.750    0.000   34.740    0.000 enum.py:1561(__and__)
+ 16332203    9.871    0.000   15.727    0.000 enum.py:1543(_get_value)
+  2721948    7.750    0.000    7.750    0.000 {method 'finditer' of '_regex.Pattern' objects}
+ 30504595    6.709    0.000    7.215    0.000 {built-in method builtins.isinstance}
+   837592    5.459    0.000   10.769    0.000 __init__.py:669(update)
+ 12825037    5.061    0.000    5.061    0.000 {method 'get' of 'dict' objects}
+     9743    4.790    0.000  454.946    0.047 profile_full_bpe.py:65(timed_max)
+  2719824    4.711    0.000   71.341    0.000 _main.py:350(finditer)
+     2125    4.249    0.002    4.249    0.002 {method 'split' of '_regex.Pattern' objects}
+      107    3.770    0.035    4.749    0.044 {method 'acquire' of '_thread.lock' objects}
+  5444069    3.644    0.000    6.264    0.000 enum.py:720(__call__)
+  2721950    3.204    0.000    4.556    0.000 <frozen importlib._bootstrap>:1390(_handle_fromlist)
+  2721950    2.877    0.000    2.877    0.000 _main.py:481(complain_unused_args)
+     2125    2.761    0.001    4.426    0.002 {method 'read' of '_io.TextIOWrapper' objects}
+  5444069    2.620    0.000    2.620    0.000 enum.py:1128(__new__)
+   277780    2.146    0.000    3.494    0.000 bpe.py:17(merge_pair)
+     3754    1.650    0.000    1.650    0.000 {built-in method _codecs.utf_8_decode}
+ 10460926    1.538    0.000    1.538    0.000 __init__.py:609(__missing__)
+   835467    1.254    0.000    3.137    0.000 __init__.py:595(__init__)
+  2721952    0.826    0.000    0.826    0.000 {built-in method builtins.hasattr}
+  2717699    0.622    0.000    0.622    0.000 {method 'end' of '_regex.Match' objects}
+   555560    0.545    0.000    0.545    0.000 {built-in method _collections._count_elements}
+  1351529    0.480    0.000    0.480    0.000 {method 'discard' of 'set' objects}
+  3016554    0.477    0.000    0.477    0.000 {built-in method builtins.len}

@@ -10,3 +10,4 @@ bpe-from-counts-*.json
 owt-*-full.json
 cuda_kernel_cache/
 training-run/
+full-eval/

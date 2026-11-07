@@ -44,4 +44,4 @@
 
 最近完整官方套件记录为 2026-11-01：46 passed、2 skipped、17.06 秒；两个跳过项为 Linux 内存限制。官方套件主要走 CPU，CUDA 前后向、AdamW、设备迁移和真实续训另有实测。归档额外核对 56 个模块与三个配置的原始 SHA-256、58 个 Python 文件语法及 adapter 实现一致性。
 
-[完整训练与生成记录](../../notes/2026-11-01-A1-FULL-TRAINING-AND-GENERATION.md)中，3.41M 参数 TinyStories 学习模型完成 40.96M 目标 token，固定批次验证 loss=2.0210，生成 200 个新 token 后 EOS。[OpenWebText 小模型](../../notes/2026-11-07-A1-OPENWEBTEXT-FULL.md)以相同步数完成训练。两次都使用学习配置，正式实验范围、完整 TinyStories BPE profile、Linux 内存验证和最终 writeup/code 交付仍待补。数值、CSV、生成文本可随笔记查看。
+3.41M 参数的 TinyStories 模型与 OpenWebText 模型都完成了 40.96M 个目标位置的训练，完整 TinyStories BPE profile 也已补齐。2026-11-07 从打包产物解压复验，结果为 46 项通过、2 项 Linux 内存测试跳过，耗时 17.11 秒。[A1 自学交付](../../deliverables/a1-basics/README.md) · [实验与核算总报告](../../notes/A1-TRAINING-REPORT.md)

@@ -1,0 +1,18 @@
+{
+  "input_file": "TinyStoriesV2-GPT4-train.txt",
+  "input_bytes": 2227753162,
+  "input_sha256": "6418d412de72888f52b5142c761ac21a582f7d1166f0bfbdb5f03ccfdec90443",
+  "bpe_source_sha256": "e135bd34a7c4c28ed44a3783bd07c708e84bc305fe0369f2223a663931679d7d",
+  "vocab_size": 10000,
+  "merges": 9743,
+  "vocab_and_merges_match_baseline": true,
+  "seconds_with_profiler": 1231.8508097999875,
+  "previous_seconds_without_profiler": 841.4560502999993,
+  "phase_seconds": {
+    "pretokenization": 988.7616500000004,
+    "prepare_pairs": 0.8123499000066658,
+    "select_pair": 229.80147170134296,
+    "apply_merge": 12.471939798648236
+  },
+  "peak_working_set_bytes": 106033152
+}
